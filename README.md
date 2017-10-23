@@ -1,8 +1,9 @@
 # mavboard
 
-**Tasks**
-1. Jade/Kent - create mopidy components
-2. Jordan/Anthony - create 3rd party info components
+**Iteration 1**
+1. Jade/Kent - make a simple mopidy/spotify call
+2. Jordan/Anthony - pull weather and/or bus data and display that information on a page
+
 
 **Developer Installation**
 ---
