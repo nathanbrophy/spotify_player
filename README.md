@@ -7,7 +7,6 @@
 
 **Developer Installation**
 ---
-1. Download project from github
-2. Open nodeJS prompt and navigate to the mavboard directory
-3. To install dependencies run: *npm install --save* 
+1. Clone project from GitHub (`git clone git@github.com:mavericksoftwareconsulting/mavboard.git`)
+3. To install dependencies run `npm install`
 4. To run the application: *npm start* and navigate browser to http://localhost:3000
