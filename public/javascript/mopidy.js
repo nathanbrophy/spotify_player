@@ -1,7 +1,9 @@
 'use strict';
 
+const apiuri = 'http://192.168.140.125:6680/mopidy/rpc';
+
 const callMopidy = () => {
-  console.log("Mopidy Test")
+  console.log("Mopidy Test");
 
   var http = new XMLHttpRequest();
   var response = "";
@@ -16,7 +18,7 @@ const callMopidy = () => {
       response = http.responseXML;
     }
   };
-  http.open("POST", "http://192.168.140.125:6680/mopidy/rpc", true);
+  http.open("POST", apiuri, true);
   http.send('{"jsonrpc": "2.0"}');
 
   console.log(response);
