@@ -2,7 +2,8 @@
 
 const Mopidy = require('mopidy');
 
-const wsURL = '//192.168.140.125:6680/mopidy/rpc';
+const rpcURL = 'http://192.168.140.125:6680/mopidy/rpc'
+const wsURL = 'ws://192.168.140.125:6680/mopidy/ws';
 
 const callMopidyWS = () => {
   console.log('Calling WebSocket API directly');
@@ -20,7 +21,7 @@ const callMopidyWS = () => {
       response = http.responseXML;
     }
   };
-  http.open("POST", `http:${wsURL}`, true);
+  http.open("POST", rpcURL, true);
   http.send('{"jsonrpc": "2.0"}');
 
   console.log(response);
@@ -32,7 +33,7 @@ const callMopidyJS = () => {
   // create and auto-connect to mopidy web socket
   const mopidy = new Mopidy({
     autoConnect: true,
-    webSocketUrl: `ws:${weUrl}`,
+    webSocketUrl: wsURL,
     callingConvention: 'by-position-or-by-name'
   });
 
