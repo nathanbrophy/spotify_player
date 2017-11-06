@@ -2,30 +2,13 @@
 
 const Mopidy = require('mopidy');
 
-const rpcURL = 'http://192.168.140.125:6680/mopidy/rpc'
+// maverick pi
+const rpcURL = 'http://192.168.140.125:6680/mopidy/rpc';
 const wsURL = 'ws://192.168.140.125:6680/mopidy/ws';
 
-const callMopidyWS = () => {
-  console.log('Calling WebSocket API directly');
-
-  var http = new XMLHttpRequest();
-  var response = "";
-  http.onload = () => {
-    console.log("Onload fire");
-  };
-  http.onerror = () => {
-    console.log("Onerror fire");
-  };
-  http.onreadystatechange = () => {
-    if (this.readyState == 4 && this.status == 200) {
-      response = http.responseXML;
-    }
-  };
-  http.open("POST", rpcURL, true);
-  http.send('{"jsonrpc": "2.0"}');
-
-  console.log(response);
-}
+// jade's pi
+// const rpcURL = 'http://192.168.2.61:6680/mopidy/rpc';
+// const wsURL = 'ws://192.168.2.61:6680/mopidy/ws';
 
 const callMopidyJS = () => {
   console.log('Calling WS API through JS wrapper');
@@ -66,3 +49,7 @@ const callMopidyJS = () => {
       });
   });
 }
+
+
+/* TEST */
+// callMopidyJS();
