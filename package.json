@@ -18,7 +18,11 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "flow-bin": "^0.58.0"
+  },
+  "engines": {
+    "node": "^8.9.x || ^9.x.x"
   }
 }
