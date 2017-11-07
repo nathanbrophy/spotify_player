@@ -10,7 +10,7 @@ const wsURL = 'ws://192.168.140.125:6680/mopidy/ws';
 // const rpcURL = 'http://192.168.2.61:6680/mopidy/rpc';
 // const wsURL = 'ws://192.168.2.61:6680/mopidy/ws';
 
-const callMopidyJS = () => {
+const callMopidy = () => {
   console.log('Calling WS API through JS wrapper');
 
   // create and auto-connect to mopidy web socket
