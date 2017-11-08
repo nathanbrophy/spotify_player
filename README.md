@@ -2,7 +2,7 @@
 
 **Iteration 1**
 1. Jade/Kent - make a simple mopidy/spotify call
-2. Jordan/Anthony - pull weather and/or bus data and display that information on a page
+2. Jordan/Anthony/Natnael - pull weather and/or bus data and display that information on a page
 
 
 **Developer Installation**
