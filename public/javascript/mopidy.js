@@ -1,7 +1,5 @@
 'use strict';
 
-const Mopidy = require('mopidy');
-
 // maverick pi
 const rpcURL = 'http://192.168.140.125:6680/mopidy/rpc';
 const wsURL = 'ws://192.168.140.125:6680/mopidy/ws';
@@ -52,4 +50,4 @@ const callMopidy = () => {
 
 
 /* TEST */
-// callMopidyJS();
+// callMopidy();
