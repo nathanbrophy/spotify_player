@@ -9,7 +9,9 @@ block content
     
   #mopidy
     h3 Control Spotify
-    button(type='button' onclick='sptPreviousTrack()') Play
-    button(type='button' onclick='sptPlay()') Play
-    button(type='button' onclick='sptPause()') Play
-    button(type='button' onclick='sptNextTrack()') Play
+    //- button(type='button' onclick='sptPreviousTrack()') Previous
+    button(type='button' id='sptPlayBtn') Play
+    button(type='button' id='sptPauseBtn') Pause
+    //- button(type='button' onclick='sptNextTrack()') Next
+
+  script(src='/javascript/index.js')

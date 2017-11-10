@@ -30,7 +30,14 @@ class SpotifyController {
     // this.wsURL = 'ws://192.168.2.61:6680/mopidy/ws';
 
     // establish Mopidy API connection
-    this.mopidy = this.initMopidy();
+    this.initMopidy().then((m) => {
+      this.mopidy = m;
+      const evt: Event = new Event('spotifyready');
+      const mopidyDiv: any = document.getElementById('mopidy');
+      if (mopidyDiv) {
+        mopidyDiv.dispatchEvent(evt);
+      }
+    });
 
     // TODO: this needs to be optimized for V8 or we will end up with a slow but stedy memory leak as new hidden classes are created
     this.state = {
@@ -42,34 +49,47 @@ class SpotifyController {
   }
 
   initMopidy(): Mopidy {
-    const mopidy = new Mopidy({
-      autoConnect: true,
-      webSocketUrl: this.wsURL,
-      callingConvention: 'by-position-or-by-name'
-    });
-
-    // register syncState as general event listener
-    mopidy.on(this.syncState);
-
-    // manually set current state
-    // after this, syncState will handle updating
-    mopidy.on('state:online', () => {
-      this.state.online = true;
-      mopidy.playback.getCurrentTrack().then(track => {
-        this.state.currentTrack = track;
-        if (track) {
-          console.log(`Currently playing ${track.name} by ${track.artists[0].name}`);
-        } else {
-          console.log('No track currently playing');
-        }
-      }).catch(e => {
-        throw e;
+    return new Promise((resolve, reject) => {
+      const mopidy = new Mopidy({
+        autoConnect: true,
+        webSocketUrl: this.wsURL,
+        callingConvention: 'by-position-or-by-name'
       });
+
+      // register syncState as general event listener
+      mopidy.on(this.syncState);
+
+      try {
+        // manually set current state
+        // after this, syncState will handle updating
+        mopidy.on('state:online', () => {
+          this.state.online = true;
+          mopidy.playback.getCurrentTrack().then((track) => {
+            this.state.currentTrack = track;
+            if (this.state.currentTrack) {
+              console.log(`Currently playing ${this.state.currentTrack.name} by ${this.state.currentTrack.artists[0].name}`);
+            } else {
+              console.log('No track currently playing');
+            }
+          });
+          resolve(mopidy);
+        });
+      } catch (e) {
+        reject(e);
+      }
     });
   }
 
-  isOnline(): boolean {
-    return this.state.online;
+  sptPlay(): void {
+    if (this.state.online) {
+      this.mopidy.playback.play();
+    }
+  }
+
+  sptPause(): void {
+    if (this.state.online) {
+      this.mopidy.playback.pause();
+    }
   }
 
   syncState(evt): void {
@@ -85,7 +105,7 @@ class SpotifyController {
         window.music.state.online = false;
         break;
       default:
-        console.log(evt);
+        // console.log(evt);
         break;
     }
   }
