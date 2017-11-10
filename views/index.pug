@@ -1,11 +1,15 @@
 extends layout
 
 block content
-  h1= title
+  h1=title
   p Welcome to #{title}
 
   #bus
     p test
     
   #mopidy
-    button(type='button' onclick='callMopidy()') #{title}
+    h3 Control Spotify
+    button(type='button' onclick='sptPreviousTrack()') Play
+    button(type='button' onclick='sptPlay()') Play
+    button(type='button' onclick='sptPause()') Play
+    button(type='button' onclick='sptNextTrack()') Play

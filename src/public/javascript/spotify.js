@@ -2,57 +2,94 @@
 
 'use strict';
 
-// maverick pi
-const rpcURL = 'http://192.168.140.125:6680/mopidy/rpc';
-const wsURL = 'ws://192.168.140.125:6680/mopidy/ws';
+// we have access to:
+// mopidy.playback
+// mopidy.tracklist
+// mopidy.playlists
+// mopidy.library
 
-// jade's pi
-// const rpcURL: string = 'http://192.168.2.61:6680/mopidy/rpc';
-// const wsURL: string = 'ws://192.168.2.61:6680/mopidy/ws';
-var m;
-const callMopidy = (): void => {
-  console.log('Calling WS API through JS wrapper');
+class SpotifyController {
+  rpcURL: string;
+  wsURL: string;
+  mopidy: Mopidy;
+  online: boolean;
+  state: {
+    online: boolean,
+    currentTrack: {},
+    nextTrack: {},
+    previousTrack: {},
+  };
 
-  // create and auto-connect to mopidy web socket
-  const mopidy = new Mopidy({
-    autoConnect: true,
-    webSocketUrl: wsURL,
-    callingConvention: 'by-position-or-by-name'
-  });
+  constructor(): void {
+    // maverick pi
+    this.rpcURL = 'http://192.168.140.125:6680/mopidy/rpc';
+    this.wsURL = 'ws://192.168.140.125:6680/mopidy/ws';
 
-  // Now we have these api objects to play with:
-  // mopidy.playback
-  // mopidy.tracklist
-  // mopidy.playlists
-  // mopidy.library
+    // jade pi
+    // this.rpcURL = 'http://192.168.2.61:6680/mopidy/rpc';
+    // this.wsURL = 'ws://192.168.2.61:6680/mopidy/ws';
 
-  // each method in these objects have params and descripton properties which will display information about what the
-  //   underlying Python function is and expects.
+    // establish Mopidy API connection
+    this.mopidy = this.initMopidy();
 
-  // log all events to console
-  // mopidy.on(console.log.bind(console));
+    // TODO: this needs to be optimized for V8 or we will end up with a slow but stedy memory leak as new hidden classes are created
+    this.state = {
+      online: false,
+      currentTrack: {},
+      nextTrack: {},
+      previousTrack: {},
+    }
+  }
 
-  // wait for mopidy server to be online and responsive
-  mopidy.on('state:online', (): void => {
-    console.log('mopidy is online');
+  initMopidy(): Mopidy {
+    const mopidy = new Mopidy({
+      autoConnect: true,
+      webSocketUrl: this.wsURL,
+      callingConvention: 'by-position-or-by-name'
+    });
 
-    // print out the current track (returns a promise)
-    mopidy.playback.getCurrentTrack()
-      .then((track: {[string]: any}): void => {
+    // register syncState as general event listener
+    mopidy.on(this.syncState);
+
+    // manually set current state
+    // after this, syncState will handle updating
+    mopidy.on('state:online', () => {
+      this.state.online = true;
+      mopidy.playback.getCurrentTrack().then(track => {
+        this.state.currentTrack = track;
         if (track) {
           console.log(`Currently playing ${track.name} by ${track.artists[0].name}`);
         } else {
           console.log('No track currently playing');
         }
-      }).catch((e: any): void => {
-        console.error(e);
+      }).catch(e => {
+        throw e;
       });
-  });
+    });
+  }
 
-  // make mopidy available from the console for API exploration
-  m = mopidy;
+  isOnline(): boolean {
+    return this.state.online;
+  }
+
+  syncState(evt): void {
+    switch (evt) {
+      case 'state:online':
+        window.music.state.online = true;
+        break;
+      case 'state:offline':
+
+      // TODO default to connecting first, then wait for connection
+      case 'reconnectionPending':
+      case 'reconnecting':
+        window.music.state.online = false;
+        break;
+      default:
+        console.log(evt);
+        break;
+    }
+  }
 }
 
-
-/* TEST */
-// callMopidy();
+// make controller available globally as window.music
+window.music = new SpotifyController();
