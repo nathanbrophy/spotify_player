@@ -1,3 +1,5 @@
+// @flow
+
 'use strict';
 
 // maverick pi
@@ -5,10 +7,10 @@ const rpcURL = 'http://192.168.140.125:6680/mopidy/rpc';
 const wsURL = 'ws://192.168.140.125:6680/mopidy/ws';
 
 // jade's pi
-// const rpcURL = 'http://192.168.2.61:6680/mopidy/rpc';
-// const wsURL = 'ws://192.168.2.61:6680/mopidy/ws';
+// const rpcURL: string = 'http://192.168.2.61:6680/mopidy/rpc';
+// const wsURL: string = 'ws://192.168.2.61:6680/mopidy/ws';
 
-const callMopidy = () => {
+const callMopidy = (): void => {
   console.log('Calling WS API through JS wrapper');
 
   // create and auto-connect to mopidy web socket
@@ -31,18 +33,18 @@ const callMopidy = () => {
   mopidy.on(console.log.bind(console));
 
   // wait for mopidy server to be online and responsive
-  mopidy.on('state:online', () => {
+  mopidy.on('state:online', (): void => {
     console.log('mopidy is online');
 
     // print out the current track (returns a promise)
     mopidy.playback.getCurrentTrack()
-      .done((track) => {
+      .done((track: {[string]: any}): void => {
         if (track) {
           console.log(`Currently playing ${track.name} by ${track.artists[0].name}`);
         } else {
           console.log('No track currently playing');
         }
-      }).catch((e) => {
+      }).catch((e: any): void => {
         console.error(e);
       });
   });
