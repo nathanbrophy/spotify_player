@@ -9,7 +9,7 @@ const wsURL = 'ws://192.168.140.125:6680/mopidy/ws';
 // jade's pi
 // const rpcURL: string = 'http://192.168.2.61:6680/mopidy/rpc';
 // const wsURL: string = 'ws://192.168.2.61:6680/mopidy/ws';
-
+var m;
 const callMopidy = (): void => {
   console.log('Calling WS API through JS wrapper');
 
@@ -30,7 +30,7 @@ const callMopidy = (): void => {
   //   underlying Python function is and expects.
 
   // log all events to console
-  mopidy.on(console.log.bind(console));
+  // mopidy.on(console.log.bind(console));
 
   // wait for mopidy server to be online and responsive
   mopidy.on('state:online', (): void => {
@@ -48,6 +48,9 @@ const callMopidy = (): void => {
         console.error(e);
       });
   });
+
+  // make mopidy available from the console for API exploration
+  m = mopidy;
 }
 
 
