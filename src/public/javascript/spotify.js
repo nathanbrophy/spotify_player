@@ -38,7 +38,7 @@ const callMopidy = (): void => {
 
     // print out the current track (returns a promise)
     mopidy.playback.getCurrentTrack()
-      .done((track: {[string]: any}): void => {
+      .then((track: {[string]: any}): void => {
         if (track) {
           console.log(`Currently playing ${track.name} by ${track.artists[0].name}`);
         } else {
