@@ -8,8 +8,6 @@
 
 ## Installation
 
----
-
 1. Clone project from GitHub 
 
 ```sh
