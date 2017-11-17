@@ -21,7 +21,7 @@ let $$ = (clas) => {
  *  stopIDs array.
  */
 let displayBusTimes = () => {
-  var stopIDs = [13223];
+  var stopIDs = [16325];
   var container = $('bus');
   
   /*
@@ -45,7 +45,7 @@ let displayBusTimes = () => {
  *  stopIDs array.
  */
 let displayTrainTimes = () => {
-  var stopIDs = [56001, 56042];
+  var stopIDs = [56001, 56043];
   var container = $('train');
   
   // update no more less than every 30 sec. recommended by metrotransit.org web services
@@ -66,10 +66,10 @@ let displayTrainTimes = () => {
  * :param container: html container element
  */
 let loadTransitTimes = (stopID, container) => {
-  
-  console.log("test");
   var http = new XMLHttpRequest();
   
+  // Add spinner
+  container.innerHTML = '<img id="spinner_' + stopID + '" src="../imgs/spinner.gif" alt="spinner gif">';
   http.onreadystatechange = () => {
     if (http.readyState == 4 && http.status == 200) {
       var uniqueRoute = [];
@@ -90,6 +90,17 @@ let loadTransitTimes = (stopID, container) => {
       }
       content += '</div>';
       
+      // Remove spinner
+      let spinner = $('spinner_' + stopID);
+      
+      /**
+      There may be two stopIDs in one container.
+      If so, ones coming after the first will
+      over write the spinner and first spinner child
+      won't exist.
+       */
+      if (spinner != null) {container.removeChild(spinner);}
+            
       container.innerHTML += content;
     }
   };
