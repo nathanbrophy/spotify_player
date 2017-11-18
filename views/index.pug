@@ -7,15 +7,10 @@ block content
   #bus
     p test
   
+  .spotifyInfo
+    Previous song: #{}
+    Current song: #{}
+    Next song: #{}
+  
   .linkToControlPanel
     a(href='/control' id='controlPanelLink') Control Panel
-
-  //-
-    #mopidy
-      h3 Control Spotify
-      //- button(type='button' onclick='sptPreviousTrack()') Previous
-      button(type='button' id='sptPlayBtn') Play
-      button(type='button' id='sptPauseBtn') Pause
-      //- button(type='button' onclick='sptNextTrack()') Next
-
-    script(src='/javascript/index.js')
