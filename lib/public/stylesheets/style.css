@@ -7,6 +7,6 @@ a {
   color: #00B7FF;
 }
 
-#mopidy {
-  display: none;
+.linkToControlPanel {
+  margin-top: 5em;
 }
