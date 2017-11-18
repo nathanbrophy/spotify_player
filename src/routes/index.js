@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
 
 // render control page
 router.get('/control', (req, res, next) => {
-  res.render('control', {title: 'Mavboard controls'});
+  res.render('control', {title: 'Mavboard Control Panel'});
 });
 
 module.exports = router;

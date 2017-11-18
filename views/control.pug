@@ -2,3 +2,12 @@ extends layout
 
 block content
   h1= title
+  
+  .mopidyControls
+    h3 Control Spotify
+    //- button(type='button' onclick='sptPreviousTrack()') Previous
+    button(type='button' id='sptPlayBtn') Play
+    button(type='button' id='sptPauseBtn') Pause
+    //- button(type='button' onclick='sptNextTrack()') Next
+
+  script(src='/javascript/control.js')
