@@ -92,6 +92,18 @@ class SpotifyController {
     }
   }
 
+  sptPreviousTrack(): void {
+    if (this.state.online) {
+      this.mopidy.playback.previous();
+    }
+  }
+
+  sptNextTrack(): void {
+    if (this.state.online) {
+      this.mopidy.playback.next();
+    }
+  }
+
   syncState(evt): void {
     switch (evt) {
       case 'state:online':

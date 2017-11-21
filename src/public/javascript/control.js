@@ -1,8 +1,10 @@
 'use strict';
 
-const setupSpotifyButtons = (): void => {
+const setupSpotifyButtons = () => {
   document.getElementById('sptPlayBtn').addEventListener('click', () => {window.music.sptPlay();});
   document.getElementById('sptPauseBtn').addEventListener('click', () => {window.music.sptPause();});
+  document.getElementById('sptPrevBtn').addEventListener('click', () => {window.music.sptPreviousTrack();});
+  document.getElementById('sptNextBtn').addEventListener('click', () => {window.music.sptNextTrack();});
   document.getElementById('mopidy').style.display = 'block';
 }
 
