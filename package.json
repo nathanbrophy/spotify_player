@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "compile": "babel src/ -d lib/",
-    "flow": "flow"
+    "flow": "flow",
+    "test": "npm run flow; npm run compile"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
