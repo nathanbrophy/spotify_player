@@ -3,13 +3,13 @@
 }
 
 #bus {
-	background: lightgray;
+	background: #3299CC;
 	padding: 1em;
 	display: inline-block;
 }
 
 #train {
-	background: lightgray;
+	background: #3299CC;
 	padding: 1em;
 	display: inline-block;
 }

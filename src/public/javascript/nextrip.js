@@ -1,11 +1,11 @@
-let $ = (id) => {
+var $ = (id) => {
   var ele = null;
   try {ele = document.getElementById(id);}
   catch (err) {console.log(err);}	
   return ele;
 };
 
-let $$ = (clas) => {
+var $$ = (clas) => {
   var ele = null;
   try {ele = document.getElementsByClassName(clas);}
   catch (err) {console.log(err);}	
@@ -21,6 +21,7 @@ let $$ = (clas) => {
  *  stopIDs array.
  */
 let displayBusTimes = () => {
+  //13207
   var stopIDs = [16325];
   var container = $('bus');
   
@@ -148,9 +149,4 @@ let createDepartureDiv = (departure) => {
   div += '</div>';
   
   return div;
-};
-
-window.onload = () => {
-  displayBusTimes();
-  displayTrainTimes();
 };

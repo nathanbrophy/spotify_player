@@ -5,5 +5,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/next_trip.css')
     script(src='/javascript/nextrip.js')
-  body()
+    script(src='/javascript/weather.js')
+    script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC7RIsZSEBIlrc85IpIs8aeeb-EMyHh2YY&libraries=places')
+  body(onload="displayBusTimes();displayTrainTimes();weatherMinneapolis()")
     block content
