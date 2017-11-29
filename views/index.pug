@@ -1,11 +1,34 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-
-  #bus
-    p test
+  header
+    h1= title   
   
-  .linkToControlPanel
-    a(href='/control' id='controlPanelLink') Control Panel
+  section(id='one')
+    h3 Developer Info
+    .devinfo
+      p Mavboard is a student developed project utilizing nodeJS to show bus, weather and music information.
+      p Current Iteration: 3
+      p Next Iteration Goals: Add music information and update layout
+
+    h3 Message
+    .message
+      p Office Phone: 651-294-1111
+      p 4HELP: 651-848-4700
+      p Wifi Password: T1mmyT@mz
+      p Jason: 612-968-8107
+
+  section(id='two')
+    h3 Now Playing
+    .music
+
+  section(id='three')
+    h3 Bus Info
+    #bus   
+
+    h3 Weather Info
+    .weather
+  
+  footer
+    .linkToControlPanel
+      a(href='/control' id='controlPanelLink') Control Panel
