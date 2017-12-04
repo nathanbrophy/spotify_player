@@ -18,9 +18,15 @@ block content
       p Wifi Password: T1mmyT@mz
       p Jason: 612-968-8107
 
-  section(id='two')
+  section(id='two' class='spotify')
     h3 Now Playing
-    .music
+    p.prevSong
+    p.currSong
+    p.nextSong
+    img(id='sptPrvBtn' src='../imgs/skip-back.svg')
+    img(id='sptPlayBtn' src='../imgs/play-circle.svg')
+    img(id='sptPauseBtn' src='../imgs/pause-circle.svg')
+    img(id='sptNextBtn' src='../imgs/skip-forward.svg')
 
   section(id='three')
     h3 Bus Info
@@ -29,12 +35,5 @@ block content
     h3 Weather Info
     .weather
   
-  .spotify
-    h3 Spotify
-    p.prevSong
-    p.currSong
-    p.nextSong
-    img(id='sptPrvBtn' src='../imgs/skip-back.svg')
-    img(id='sptPlayBtn' src='../imgs/play-circle.svg')
-    img(id='sptPauseBtn' src='../imgs/pause-circle.svg')
-    img(id='sptNextBtn' src='../imgs/skip-forward.svg')
+  
+    
