@@ -33,9 +33,11 @@ class SpotifyController {
     this.initMopidy().then((m) => {
       this.mopidy = m;
       const evt: Event = new Event('spotifyready');
-      const mopidyDiv: any = document.getElementById('mopidy');
+      const mopidyDiv: any = document.querySelector('.mopidy');
       if (mopidyDiv) {
         mopidyDiv.dispatchEvent(evt);
+      } else {
+        console.error('Unable to bind to mopdiy div');
       }
     });
 
@@ -116,6 +118,9 @@ class SpotifyController {
       case 'reconnecting':
         window.music.state.online = false;
         break;
+
+      // TODO on song change, emit event so text can be updated
+
       default:
         // console.log(evt);
         break;
