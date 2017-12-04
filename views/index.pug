@@ -7,10 +7,12 @@ block content
   #bus
     p test
   
-  .spotifyInfo
+  .spotify
+    h3 Spotify
     //- Previous song: #{}
     //- Current song: #{}
     //- Next song: #{}
-  
-  .linkToControlPanel
-    a(href='/control' id='controlPanelLink') Control Panel
+    img(id='sptPrvBtn' src='../imgs/skip-back.svg')
+    img(id='sptPlayBtn' src='../imgs/play-circle.svg')
+    img(id='sptPauseBtn' src='../imgs/pause-circle.svg')
+    img(id='sptNextBtn' src='../imgs/skip-forward.svg')

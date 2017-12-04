@@ -7,11 +7,7 @@ a {
   color: #00B7FF;
 }
 
-.linkToControlPanel {
-  margin-top: 5em;
-}
-
-.spotifyInfo {
+.spotify {
   border: 2px solid black;
   border-radius: 5px;
 }
