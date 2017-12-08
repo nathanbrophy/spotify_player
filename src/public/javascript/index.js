@@ -9,11 +9,7 @@ const setupSpotifyButtons = () => {
 }
 
 const spotDiv = document.querySelector('.spotify');
-console.log("Spotdiv");
-console.log(spotDiv);
 spotDiv.addEventListener('spotifyready', (evt) => {
-  console.log("Catching event: ");
-  console.log(evt)
   setupSpotifyButtons();
   // mopdiv.addEventListener('songchange' () => {
   //   updateSongInfo();

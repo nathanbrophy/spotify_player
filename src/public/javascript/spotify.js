@@ -35,9 +35,7 @@ class SpotifyController {
       const evt: Event = new Event('spotifyready');
       const spotifyDiv: any = document.querySelector('.spotify');
       if (spotifyDiv) {
-        console.log("Dispatching event");
         spotifyDiv.dispatchEvent(evt);
-        console.log("Event was dispatched");
       } else {
         console.error('Unable to bind to mopdiy div');
       }
@@ -47,7 +45,7 @@ class SpotifyController {
     this.state = {
       online: false,
       currentTrack: {},
-      nextTrack: {},
+      nextTracks: {},
       previousTrack: {},
     }
   }
@@ -109,6 +107,7 @@ class SpotifyController {
   }
 
   syncState(evt): void {
+    console.log(evt);
     switch (evt) {
       case 'state:online':
         window.music.state.online = true;
@@ -122,6 +121,20 @@ class SpotifyController {
         break;
 
       // TODO on song change, emit event so text can be updated
+      case 'event:trackPlaybackStarted':
+        window.music.mopidy.playback.getCurrentTrack().then((track) => {
+          document.querySelector('p.currSong').innerHTML = '' + track.name + ' -- ' + track.artists[0].name;
+        });
+        break;
+
+      // Ensure volumn stays bearable
+      case 'event:volumeChanged':
+        console.log("Volume changed");
+        break;
+
+      case 'event:tracklistChanged':
+        console.log("");
+        break;
 
       default:
         // console.log(evt);
