@@ -24,6 +24,7 @@ class SpotifyController {
     // maverick pi
     this.rpcURL = 'http://192.168.140.125:6680/mopidy/rpc';
     this.wsURL = 'ws://192.168.140.125:6680/mopidy/ws';
+    this.numNextTracks = 5;
 
     // jade pi
     // this.rpcURL = 'http://192.168.2.61:6680/mopidy/rpc';
@@ -45,8 +46,8 @@ class SpotifyController {
     this.state = {
       online: false,
       currentTrack: {},
-      nextTracks: {},
-      previousTrack: {},
+      nextTracks: [],
+      previousTracks: []
     }
   }
 
@@ -69,9 +70,17 @@ class SpotifyController {
           mopidy.playback.getCurrentTrack().then((track) => {
             this.state.currentTrack = track;
             if (this.state.currentTrack) {
+              document.querySelector('p.currSong').innerHTML = '' + track.name + ' -- ' + track.artists[0].name;
               console.log(`Currently playing ${this.state.currentTrack.name} by ${this.state.currentTrack.artists[0].name}`);
             } else {
               console.log('No track currently playing');
+            }
+          });
+
+          mopidy.tracklist.getTracks().then((tracklist) => {
+            console.log(this.numNextTracks);
+            for(let i = 1; i <= this.numNextTracks; i++) {
+              this.state.nextTracks.push(this.extractTrackInfo(tracklist[i]));
             }
           });
           resolve(mopidy);
@@ -133,13 +142,26 @@ class SpotifyController {
         break;
 
       case 'event:tracklistChanged':
-        console.log("");
+        console.log("Changed yo!");
+        window.music.state.nextTracks = [];
+        window.music.mopidy.tracklist.getTracks().then((tracklist) => {
+          for(let i = 1; i <= window.music.numNextTracks; i++) {
+            window.music.state.nextTracks.push(window.music.extractTrackInfo(tracklist[i]));
+          }
+        });
         break;
 
       default:
         // console.log(evt);
         break;
     }
+  }
+
+  extractTrackInfo(trackObj) {
+    let info = {}
+    info.trackName = trackObj.name;
+    info.artist = trackObj.artists[0].name;
+    return info;
   }
 }
 
