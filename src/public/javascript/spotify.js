@@ -33,9 +33,11 @@ class SpotifyController {
     this.initMopidy().then((m) => {
       this.mopidy = m;
       const evt: Event = new Event('spotifyready');
-      const mopidyDiv: any = document.querySelector('.mopidy');
-      if (mopidyDiv) {
-        mopidyDiv.dispatchEvent(evt);
+      const spotifyDiv: any = document.querySelector('.spotify');
+      if (spotifyDiv) {
+        console.log("Dispatching event");
+        spotifyDiv.dispatchEvent(evt);
+        console.log("Event was dispatched");
       } else {
         console.error('Unable to bind to mopdiy div');
       }
