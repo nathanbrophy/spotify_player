@@ -1,0 +1,36 @@
+#info_view {
+	color: white;
+	display: inline-grid;
+}
+
+#bus {
+	/*background: #3299CC;*/
+	padding: 1em;
+	display: inline-block;
+}
+
+#train {
+	/*background: #3299CC;*/
+	padding: 1em;
+	display: inline-block;
+}
+
+.departure {
+	/*background: white;*/
+	margin: 0.5em;
+	padding: 0.5em;
+	border: 1px solid black;
+	/*display: inline-block;*/
+}
+
+.dep_trans {
+	/*font-weight: bold;*/
+}
+
+.dep_desc {
+	color: green;
+}
+
+.dep_time {
+	font-style: italic;
+}
