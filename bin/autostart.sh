@@ -1,8 +1,3 @@
-(
-  cd $HOME/mavboard
-  npm start &
-)
+(cd $HOME/mavboard && git pull && npm start &)
 
-(
-  chromium-browser --kiosk http://localhost:3000/
-)
+(chromium-browser --kiosk http://localhost:3000/)
