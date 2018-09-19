@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run compile; node ./bin/www",
+    "start": "npm run-script compile && node ./bin/www",
     "compile": "babel src/ -d lib/",
     "flow": "flow",
     "test": "npm run flow; npm run compile"
