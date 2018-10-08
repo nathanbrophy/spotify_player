@@ -30,9 +30,6 @@ header {
 	color: #f39c12;
 }
 
-
-
-
 .linkToControlPanel {
   margin-top: 5em;
 }
@@ -42,61 +39,17 @@ MEDIA QUERIES
 *************************************************************************************/
 /* for 980px or less */
 @media screen and (max-width: 980px) {
-	#one {
-		width: 41%;
-		padding: 1% 4%;
-	}
-	#two {
-		width: 41%;
-		padding: 1% 4%;
-		margin: 0px 0px 5px 5px;
-		float: right;
-	}
-
-	#three {
-		clear: both;
-		padding: 1% 4%;
-		width: auto;
-		float: none;
-	}
-
 	header, footer {
 		padding: 1% 4%;
 	}
 }
 
-/* for 700px or less */
-@media screen and (max-width: 600px) {
-
-	#one {
-		width: auto;
-		float: none;
-	}
-
-	#two {
-		width: auto;
-		float: none;
-		margin-left: 0px;
-	}
-
-	#three {
-		width: auto;
-		float: none;
-	}
-
-}
-
 /* for 480px or less */
 @media screen and (max-width: 480px) {
-
 	header {
 		height: auto;
 	}
 	h1 {
 		font-size: 2em;
 	}
-	#three {
-		display: none;
-	}
-
 }
