@@ -4,17 +4,17 @@ block content
   section(class="grid-container")
     script(src='/javascript/index.js')
 
-    section(id='section1' class='grid-item')
+    section(class='grid-item section1')
       h1= title
 
-    section(id='section2' class='spotify grid-item')
+    section(class='spotify grid-item section2')
       h3 Now Playing
       p.currSong
 
       img(id='sptPlayBtn' src='../imgs/play-circle.svg')
       img(id='sptPauseBtn' src='../imgs/pause-circle.svg')
 
-    section(id='section3' class='grid-item')
+    section(class='grid-item section3')
       h3 Office Info
       .message
         p Office Phone: 651-294-1111
@@ -22,28 +22,53 @@ block content
         p Wifi Password: T1mmyT@mz
         p Jason: 612-968-8107
 
-    section(id='section4' class='grid-item')
+    section(class='grid-item section4')
       #info_view
         #weather
 
-    section(id='section5' class='grid-item')
+    section(class='grid-item section5')
       p 7 Day Forecast
 
-    section(id='section6' class='grid-item')
+    section(class='grid-item section6')
       p.prevSong
       img(id='sptPrvBtn' src='../imgs/skip-back.svg')
 
-    section(id='section7' class='grid-item')
+    section(class='grid-item section7')
       p.nextSong
       img(id='sptNextBtn' src='../imgs/skip-forward.svg')
 
-    section(id='section8' class='grid-item')
+    section(class='grid-item section8')
       .devinfo
         p Mavboard is a student developed project utilizing nodeJS to show bus, weather and music information.
         p Current Iteration: 3
         p Next Iteration Goals: Add music information and update layout
 
-    section(id='section9' class='grid-item')
-      #info_view
-        #train
-        #bus
+    section(id="grnWest" class="grid-item section9")
+      section(class="flip-container")
+        section(class="flipper")
+          section(class="front")
+          section(class="back")
+            
+    section(id="grnEast" class="grid-item section10")
+      section(class="flip-container")
+        section(class="flipper")
+          section(class="front")
+          section(class="back")
+            
+    section(id="bus1" class="grid-item section11")
+      section(class="flip-container")
+        section(class="flipper")
+          section(class="front")
+          section(class="back")
+            
+    section(id="bus2" class="grid-item section12")
+      section(class="flip-container")
+        section(class="flipper")
+          section(class="front")
+          section(class="back")
+            
+    section(id="bus3" class="grid-item section13")
+      section(class="flip-container")
+        section(class="flipper")
+          section(class="front")
+          section(class="back")
