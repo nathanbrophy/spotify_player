@@ -1,0 +1,80 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 75px);
+}
+
+.grid-item {
+  text-align: center;
+  overflow: hidden;
+}
+
+.section1 { /*header*/
+  grid-column: 1 / span 12;
+  grid-row: 1 / span 2;
+}
+
+.section2 { /*music*/
+  grid-column: 4 / span 6;
+  grid-row: 3 / span 7;
+}
+
+.section3 { /*office*/
+  grid-column: 1 / span 3;
+  grid-row: 3 / span 4;
+  text-align: right;
+}
+
+.section4 { /*weather*/
+  grid-column: 1 / span 3;
+  grid-row: 7 / span 4;
+}
+
+.section5 { /*7day*/
+  grid-column: 1 / span 3;
+  grid-row: 11 / span 2;
+}
+
+.section6 { /*previous*/
+  grid-column: 4 / span 3;
+  grid-row: 10 / span 2;
+}
+
+.section7 { /*next*/
+  grid-column: 7 / span 3;
+  grid-row: 10 / span 2;
+}
+
+.section8 { /*footer*/
+  grid-column: 4 / span 6;
+  grid-row: 12 / span 1;
+}
+
+.section9 { /*transit*/
+  grid-column: 10 / span 3;
+  grid-row: 3 / span 2;
+}
+
+.section10 {
+  grid-column: 10 / span 3;
+  grid-row: 5 / span 2;
+}
+
+.section11 {
+  grid-column: 10 / span 3;
+  grid-row: 7 / span 2;
+}
+
+.section12 {
+  grid-column: 10 / span 3;
+  grid-row: 9 / span 2;
+}
+
+.section13 {
+  grid-column: 10 / span 3;
+  grid-row: 11 / span 2;
+}
+
+.transit_section {
+  text-align: left;
+}
