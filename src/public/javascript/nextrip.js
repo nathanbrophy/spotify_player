@@ -1,40 +1,38 @@
-var $ = (id) => {
+'use strict';
+
+var stopInfo = [
+  {
+    stopID: 56001, 56043
+    container_name: "transit1"
+  },
+  {
+    stopID: 56043,
+    container_name: "transit2"
+  },
+  {
+    stopID: 16325,
+    container_name: "transit3"
+  },
+];
+
+var $ = id => {
   var ele = null;
-  try {ele = document.getElementById(id);}
-  catch (err) {console.log(err);}
+  try {
+    ele = document.getElementById(id);
+  } catch (err) {
+    console.log(err);
+  }
   return ele;
 };
 
-var $$ = (clas) => {
+var $$ = clas => {
   var ele = null;
-  try {ele = document.getElementsByClassName(clas);}
-  catch (err) {console.log(err);}
+  try {
+    ele = document.getElementsByClassName(clas);
+  } catch (err) {
+    console.log(err);
+  }
   return ele;
-};
-
-/**
- * start setInterval event to diplay
- * bus times on window load.
- *
- * Note:
- *  add stop ids need to desplay in
- *  stopIDs array.
- */
-let displayBusTimes = () => {
-  //13207
-  var stopIDs = [16325];
-  var container = $('bus');
-
-  /*
-  update no more less than every 30 sec.
-  recommended by metrotransit.org web services
-   */
-  stopIDs.forEach ((stopID) => {
-    loadTransitTimes(stopID, container);
-
-    // Clears container content every time it fires
-    setInterval (() => {container.innerHTML = ''; loadTransitTimes(stopID, container);}, 35000);
-  });
 };
 
 /**
@@ -45,18 +43,18 @@ let displayBusTimes = () => {
  *  add stop ids need to desplay in
  *  stopIDs array.
  */
-let displayTrainTimes = () => {
-  var stopIDs = [56001, 56043];
-  var container = $('train');
-
+let displayTimes = () => {
   // update no more less than every 30 sec. recommended by metrotransit.org web services
-  stopIDs.forEach ((stopID) => {
-    loadTransitTimes(stopID, container);
+  stopInfo.forEach(stop => {
+    loadTransitTimes(stop.stopID, $(stop.container_name));
 
     // Clears container content every time it fires
-    setInterval (() => {container.innerHTML = ''; loadTransitTimes(stopID, container);}, 35000);
+    setInterval(() => {
+       $(stop.container_name).innerHTML = '';loadTransitTimes(stop.stopID, $(stop.container_name));
+    }, 35000);
   });
 };
+
 
 /**
  * Request NextTrip info for 'stopID'
@@ -100,7 +98,9 @@ let loadTransitTimes = (stopID, container) => {
       over write the spinner and first spinner child
       won't exist.
        */
-      if (spinner != null) {container.removeChild(spinner);}
+      if (spinner != null) {
+        container.removeChild(spinner);
+      }
 
       container.innerHTML += content;
     }
@@ -115,20 +115,20 @@ let loadTransitTimes = (stopID, container) => {
  * Creates div containing needed departure
  * info from passed in data.
  */
-let createDepartureDiv = (departure) => {
+let createDepartureDiv = departure => {
   var div = '<div class="departure">';
 
   try {
 
     var depRouteArr = departure.getElementsByTagName('Route');
-    var depDirArr   = departure.getElementsByTagName('RouteDirection');
-    var depTimeArr  = departure.getElementsByTagName('DepartureText');
-    var depDescArr  = departure.getElementsByTagName('Description');
+    var depDirArr = departure.getElementsByTagName('RouteDirection');
+    var depTimeArr = departure.getElementsByTagName('DepartureText');
+    var depDescArr = departure.getElementsByTagName('Description');
 
     var depRoute = depRouteArr != null ? depRouteArr[0].innerHTML : 'No Route';
-    var depDir   = depDirArr   != null ? depDirArr[0].innerHTML   : 'No Route Direction';
-    var depTime  = depTimeArr  != null ? depTimeArr[0].innerHTML  : 'No Departure Time';
-    var depDesc  = depDescArr  != null ? depDescArr[0].innerHTML  : 'No Description';
+    var depDir = depDirArr != null ? depDirArr[0].innerHTML : 'No Route Direction';
+    var depTime = depTimeArr != null ? depTimeArr[0].innerHTML : 'No Departure Time';
+    var depDesc = depDescArr != null ? depDescArr[0].innerHTML : 'No Description';
 
     div += '<span class="dep_trans">';
     div += depRoute + ' ';
