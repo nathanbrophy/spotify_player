@@ -2,7 +2,7 @@
 
 var stopInfo = [
   {
-    stopID: 56001, 56043
+    stopID: 56001,
     container_name: "transit1"
   },
   {
