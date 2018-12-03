@@ -36,41 +36,44 @@
 }
 
 .section6 { /*previous*/
-  grid-column: 4 / span 3;
+  grid-column: 4 / span 2;
+  grid-row: 10 / span 2;
+}
+.section7 { /*play and pause*/
+  grid-column: 6 / span 2;
+  grid-row: 10 / span 2;
+}
+.section8 { /*next*/
+  grid-column: 8 / span 2;
   grid-row: 10 / span 2;
 }
 
-.section7 { /*next*/
-  grid-column: 7 / span 3;
-  grid-row: 10 / span 2;
-}
-
-.section8 { /*footer*/
+.section9 { /*footer*/
   grid-column: 4 / span 6;
   grid-row: 12 / span 1;
 }
 
-.section9 { /*transit*/
+.section10 { /*transit*/
   grid-column: 10 / span 3;
   grid-row: 3 / span 2;
 }
 
-.section10 {
+.section11 {
   grid-column: 10 / span 3;
   grid-row: 5 / span 2;
 }
 
-.section11 {
+.section12 {
   grid-column: 10 / span 3;
   grid-row: 7 / span 2;
 }
 
-.section12 {
+.section13 {
   grid-column: 10 / span 3;
   grid-row: 9 / span 2;
 }
 
-.section13 {
+.section14 {
   grid-column: 10 / span 3;
   grid-row: 11 / span 2;
 }
