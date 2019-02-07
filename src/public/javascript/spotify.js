@@ -22,8 +22,8 @@ class SpotifyController {
 
   constructor(): void {
     // maverick pi
-    this.rpcURL = 'http://192.168.140.125:6680/mopidy/rpc';
-    this.wsURL = 'ws://192.168.140.125:6680/mopidy/ws';
+    this.rpcURL = 'http://192.168.140.99:6680/mopidy/rpc';
+    this.wsURL = 'ws://192.168.140.99:6680/mopidy/ws';
 
     // jade pi
     // this.rpcURL = 'http://192.168.2.61:6680/mopidy/rpc';
