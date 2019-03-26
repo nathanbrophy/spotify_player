@@ -10,7 +10,7 @@ block content
     section(class='spotify grid-item section2')
       h3 Now Playing
       p.currSong
-      img(id='current-track-image' src='../imgs/art.jpg' alt='spotify album art')
+      img(id='current-track-image' alt='spotify album art')
 
 
     section(class='grid-item section3')
@@ -29,16 +29,16 @@ block content
 
     section(class='grid-item section6')
       p.prevSong
-      img(id='sptPrvBtn' src='../imgs/skip-back.svg')
+      img(id='sptPrvBtn' class="cursor-hover" src='../imgs/skip-back.svg' onclick="window.music.sptPreviousTrack()")
 
     section(class='grid-item section7')
       p.controller
-      img(id='sptPlayBtn' src='../imgs/play-circle.svg')
-      img(id='sptPauseBtn' src='../imgs/pause-circle.svg')
+      img(id='sptPlayBtn' class='cursor-hover' src='../imgs/play-circle.svg' onclick="window.music.sptPlay()")
+      img(id='sptPauseBtn' class='cursor-hover' src='../imgs/pause-circle.svg' onclick="window.music.sptPause()")
 
     section(class='grid-item section8')
       p.nextSong
-      img(id='sptNextBtn' src='../imgs/skip-forward.svg')/
+      img(id='sptNextBtn' class='cursor-hover' src='../imgs/skip-forward.svg' onclick="window.music.sptNextTrack()")/
 
 
     section(class='grid-item section9 marquee')
