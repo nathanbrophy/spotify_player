@@ -23,7 +23,7 @@ var $$ = (clas) => {
 let displayBusTimes = () => {
   //13207
   var stopIDs = [16325];
-  var container = $('bus');
+  var container = $('trnst1');
 
   /*
   update no more less than every 30 sec.

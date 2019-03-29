@@ -1,0 +1,78 @@
+{{!< layout}}
+
+<section class="grid-container">
+  <script type="text/javascript" src="/javascript/index.js"></script>
+
+  <section class='grid-item section1'>
+    <h1>{{title}}</h1>
+    <em>MSP-Maverick Office</em>
+    <hr>
+  </section>
+
+  <section class='spotify grid-item section2'>
+    <h3>Now Playing</h3>
+    <p id='currSong'>No Song Currently Playing</p>
+    <img id='current-track-image' alt='spotify album art'>
+  </section>
+
+  <section class='grid-item section3'>
+    <h3>Office Info</h3>
+
+    <div class="message">
+      <p>Office Phone: 651-294-1111</p>
+      <p>4HELP: 651-848-4700</p>
+      <p>Wifi Password: T1mmyT@mz</p>
+      <p>Jason: 612-968-8107</p>
+    </div>
+  </section>
+
+  <section class='grid-item section4'>
+    <p>Weather</p>
+  </section>
+
+  <section class='grid-item section5'>
+    <p>7 Day Forecast</p>
+  </section>
+
+  <section class='grid-item section6'>
+    <img id='sptPrvBtn' class="cursor-hover" src='../imgs/skip-back.svg' onclick="window.music.sptPreviousTrack()">
+  </section>
+
+  <section class='grid-item section7'>
+    <img id='sptPlayBtn' class='cursor-hover' src='../imgs/play-circle.svg' onclick="window.music.sptPlay()">
+    <img id='sptPauseBtn' class='cursor-hover' src='../imgs/pause-circle.svg' onclick="window.music.sptPause()">
+  </section>
+
+  <section class='grid-item section8'>
+    <img id='sptNextBtn' class='cursor-hover' src='../imgs/skip-forward.svg' onclick="window.music.sptNextTrack()">
+  </section>
+
+  <section class='grid-item section9 marquee'>
+    <div class="marquee">
+      <div>
+        <span>Mavboard is a student developed project utilizing nodeJS to show bus, weather and music information. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Current Iteration: 3  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next Iteration Goals: Add music information and update layout</span>
+        <span>Mavboard is a student developed project utilizing nodeJS to show bus, weather and music information. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Current Iteration: 3  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next Iteration Goals: Add music information and update layout</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="trnst1" class="grid-item section10 transit_section">
+    <p>Transit Info</p>
+  </section>
+
+  <section id="trnst2" class="grid-item section11 transit_section">
+    <p>Transit Info</p>
+  </section>
+
+  <section id="trnst3" class="grid-item section12 transit_section">
+    <p>Transit Info</p>
+  </section>
+
+  <section id="trnst4" class="grid-item section13 transit_section">
+    <p>Transit Info</p>
+  </section>
+
+  <section id="trnst5" class="grid-item section14 transit_section">
+    <p>Transit Info</p>
+  </section>
+</section>

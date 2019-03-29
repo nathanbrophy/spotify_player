@@ -157,7 +157,7 @@ class SpotifyController {
       // TODO on song change, emit event so text can be updated
       case 'event:trackPlaybackStarted':
         window.music.mopidy.playback.getCurrentTrack().then((track) => {
-          document.querySelector('p.currSong').innerHTML = '' + track.name + ' -- ' + track.artists[0].name;
+          document.getElementById('#currSong').innerHTML = '' + track.name + ' -- ' + track.artists[0].name;
 	  window.music.mopidy.library.getImages([track.uri]).then(result => updateCoverArt(track.uri, result));
         });
         break;

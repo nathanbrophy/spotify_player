@@ -8,10 +8,7 @@ const setupSpotifyButtons = () => {
   spotDiv.style.display = 'block';
 }
 
-const spotDiv = document.querySelector('.spotify');
-spotDiv.addEventListener('spotifyready', (evt) => {
-  setupSpotifyButtons();
-  // mopdiv.addEventListener('songchange' () => {
-  //   updateSongInfo();
-  // });
-});
+function displayTimes() {
+	displayBusTimes();
+	displayTrainTimes();
+}
