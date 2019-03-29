@@ -15,8 +15,8 @@
     <img id='current-track-image' alt='spotify album art'>
   </section>
 
-  <section class='grid-item section3'>
-    <h3>Office Info</h3>
+  <section class='grid-item section3 info-fields'>
+    <h3 id="office-info-header">Office Info</h3>
 
     <div class="message">
       <p>Office Phone: 651-294-1111</p>
@@ -26,24 +26,24 @@
     </div>
   </section>
 
-  <section class='grid-item section4'>
+  <section class='grid-item section4 info-fields'>
     <p>Weather</p>
   </section>
 
-  <section class='grid-item section5'>
+  <section class='grid-item section5 info-fields'>
     <p>7 Day Forecast</p>
   </section>
 
-  <section class='grid-item section6'>
+  <section class='grid-item section6 spot-buttons'>
     <img id='sptPrvBtn' class="cursor-hover" src='../imgs/skip-back.svg' onclick="window.music.sptPreviousTrack()">
   </section>
 
-  <section class='grid-item section7'>
+  <section class='grid-item section7 spot-buttons'>
     <img id='sptPlayBtn' class='cursor-hover' src='../imgs/play-circle.svg' onclick="window.music.sptPlay()">
     <img id='sptPauseBtn' class='cursor-hover' src='../imgs/pause-circle.svg' onclick="window.music.sptPause()">
   </section>
 
-  <section class='grid-item section8'>
+  <section class='grid-item section8 spot-buttons'>
     <img id='sptNextBtn' class='cursor-hover' src='../imgs/skip-forward.svg' onclick="window.music.sptNextTrack()">
   </section>
 
@@ -56,23 +56,12 @@
     </div>
   </section>
 
-  <section id="trnst1" class="grid-item section10 transit_section">
-    <p>Transit Info</p>
-  </section>
-
-  <section id="trnst2" class="grid-item section11 transit_section">
-    <p>Transit Info</p>
-  </section>
-
-  <section id="trnst3" class="grid-item section12 transit_section">
-    <p>Transit Info</p>
-  </section>
-
-  <section id="trnst4" class="grid-item section13 transit_section">
-    <p>Transit Info</p>
-  </section>
-
-  <section id="trnst5" class="grid-item section14 transit_section">
-    <p>Transit Info</p>
+  <section class="grid-item section10 transit_section">
+    <h3 id="transit-info-header">Transit Info</h3>
+    <div class="container blur">
+      <ul class="slider" id="transit-marquee">
+        <!-- dynamic transit times generated here -->
+      </ul>
+    </div>
   </section>
 </section>

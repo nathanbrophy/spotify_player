@@ -12,9 +12,8 @@
 }
 
 .departure {	
-	margin: 0.5em;
 	padding: 0.5em;
-	border: 1px solid black;
+	border: 1px solid #5c90a0;
 }
 
 .dep_trans {

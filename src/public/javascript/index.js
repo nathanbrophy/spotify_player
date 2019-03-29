@@ -9,6 +9,7 @@ const setupSpotifyButtons = () => {
 }
 
 function displayTimes() {
-	displayBusTimes();
-	displayTrainTimes();
+	//displayBusTimes();
+	//displayTrainTimes();
+	displayAllTimes();
 }

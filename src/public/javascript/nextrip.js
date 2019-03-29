@@ -1,3 +1,11 @@
+/** marquee CSS found at: https://codepen.io/strongpom/pen/qmooZe */
+
+/**
+ * Function to go through an return the DOM element
+ *
+ * @param {string} id is the id of the DOM element you want
+ * @returns {DOM element} the DOM element with the given id
+ */
 var $ = (id) => {
   var ele = null;
   try {ele = document.getElementById(id);}
@@ -5,6 +13,13 @@ var $ = (id) => {
   return ele;
 };
 
+/**
+ * Function to go through an return a list of
+ * DOM elements with the class name
+ *
+ * @param {string} clas is the class of the DOM elements you want
+ * @returns {Array [Dom element]} a list of DOM elements with class name = clas
+ */
 var $$ = (clas) => {
   var ele = null;
   try {ele = document.getElementsByClassName(clas);}
@@ -13,64 +28,31 @@ var $$ = (clas) => {
 };
 
 /**
- * start setInterval event to diplay
- * bus times on window load.
- *
- * Note:
- *  add stop ids need to desplay in
- *  stopIDs array.
+ * Set up an interval that refreshes the marquee content for
+ * transit info, every minute.
  */
-let displayBusTimes = () => {
-  //13207
-  var stopIDs = [16325];
-  var container = $('trnst1');
+function displayAllTimes() {
+  var marquee = $('transit-marquee');
+  var stopIDs = [16325, 56001, 56043];
 
-  /*
-  update no more less than every 30 sec.
-  recommended by metrotransit.org web services
-   */
   stopIDs.forEach ((stopID) => {
-    loadTransitTimes(stopID, container);
+    refreshTransitTimes(stopID, marquee);
 
     // Clears container content every time it fires
-    setInterval (() => {container.innerHTML = ''; loadTransitTimes(stopID, container);}, 35000);
+    setInterval (() => {marquee.innerHTML = ''; refreshTransitTimes(stopID, marquee);}, 60000);
   });
-};
+}
 
 /**
- * start setInterval event to
- * diplay train times on window load
+ * Function updates a dynamically generated marquee item
  *
- * Note:
- *  add stop ids need to desplay in
- *  stopIDs array.
+ * @param {number} stopID is the id of the transit stop
+ * @param {DOM element} marquee is the currently active marquee
  */
-let displayTrainTimes = () => {
-  var stopIDs = [56001, 56043];
-  var container = $('train');
-
-  // update no more less than every 30 sec. recommended by metrotransit.org web services
-  stopIDs.forEach ((stopID) => {
-    loadTransitTimes(stopID, container);
-
-    // Clears container content every time it fires
-    setInterval (() => {container.innerHTML = ''; loadTransitTimes(stopID, container);}, 35000);
-  });
-};
-
-/**
- * Request NextTrip info for 'stopID'
- * and place the info in html element
- * 'container'.
- *
- * :param stopID: stop station id
- * :param container: html container element
- */
-let loadTransitTimes = (stopID, container) => {
+function refreshTransitTimes(stopID, marquee) {
+  console.log("Stop ID: ", stopID);
   var http = new XMLHttpRequest();
 
-  // Add spinner
-  container.innerHTML = '<img id="spinner_' + stopID + '" src="../imgs/spinner.gif" alt="spinner gif">';
   http.onreadystatechange = () => {
     if (http.readyState == 4 && http.status == 200) {
       var uniqueRoute = [];
@@ -78,48 +60,37 @@ let loadTransitTimes = (stopID, container) => {
       var response = http.responseXML;
       var x = response.getElementsByTagName("NexTripDeparture");
 
-      var content = '<div class="transit_stop" id="' + stopID + '">Stop ID: ' + stopID;
+      var content = `<div class="transit-item-wrapper"><li class="transit_stop" id=stop-${stopID}><p>
+                        Stop ID: ${stopID}
+                     </p></li>`;
+
       for (var i = 0; i < x.length; i++) {
         var route = x[i].getElementsByTagName('Route')[0];
         route = route.innerHTML;
 
         if (!uniqueRoute.includes(route)) {
-          content += createDepartureDiv(x[i]);
+          content += generateDepartureLi(x[i]);
 
           uniqueRoute.push(route);
         }
       }
-      content += '</div>';
-
-      // Remove spinner
-      let spinner = $('spinner_' + stopID);
-
-      /**
-      There may be two stopIDs in one container.
-      If so, ones coming after the first will
-      over write the spinner and first spinner child
-      won't exist.
-       */
-      if (spinner != null) {container.removeChild(spinner);}
-
-      container.innerHTML += content;
+      content += "</div>";
+      marquee.innerHTML += content;
     }
   };
 
   var url = "http://svc.metrotransit.org/NexTrip/" + stopID;
   http.open("GET", url, true);
   http.send();
-};
+}
 
 /**
- * Creates div containing needed departure
- * info from passed in data.
+ * Given the current departure information, generate a
+ * dynamic list item for the marquee.
  */
-let createDepartureDiv = (departure) => {
-  var div = '<div class="departure">';
-
+function generateDepartureLi(departure) {
+  var div = "";
   try {
-
     var depRouteArr = departure.getElementsByTagName('Route');
     var depDirArr   = departure.getElementsByTagName('RouteDirection');
     var depTimeArr  = departure.getElementsByTagName('DepartureText');
@@ -130,23 +101,20 @@ let createDepartureDiv = (departure) => {
     var depTime  = depTimeArr  != null ? depTimeArr[0].innerHTML  : 'No Departure Time';
     var depDesc  = depDescArr  != null ? depDescArr[0].innerHTML  : 'No Description';
 
-    div += '<span class="dep_trans">';
+    div += '<li class="dep_trans"><p>';
     div += depRoute + ' ';
     div += depDir;
-    div += '</span><br>';
+    div += '</p></li>';
 
-    div += '<span class="dep_desc">' + depDesc + '</span><br>';
+    div += '<li class="dep_desc"><p>' + depDesc + '</p></li>';
 
     if (depTime.includes('Min')) {
-      div += '<span class="dep_time">Next in: ' + depTime + ' </span>';
+      div += '<li class="dep_time"><p>Next in: ' + depTime + ' </p></li>';
     } else {
-      div += '<span class="dep_time">Next at: ' + depTime + '</span>';
+      div += '<li class="dep_time"><p>Next at: ' + depTime + '</p></li>';
     }
   } catch (err) {
     console.log(err);
   }
-
-  div += '</div>';
-
   return div;
-};
+}
