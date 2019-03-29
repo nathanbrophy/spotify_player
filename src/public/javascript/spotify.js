@@ -103,6 +103,7 @@ class SpotifyController {
             this.state.currentTrack = track;
             if (this.state.currentTrack) {
               console.log(`Currently playing ${this.state.currentTrack.name} by ${this.state.currentTrack.artists[0].name}`);
+              document.getElementById('currSong').innerHTML = '' + track.name + ' -- ' + track.artists[0].name;
               mopidy.library.getImages([track.uri]).then(result => updateCoverArt(track.uri, result));
             } else {
               console.log('No track currently playing');
@@ -157,8 +158,8 @@ class SpotifyController {
       // TODO on song change, emit event so text can be updated
       case 'event:trackPlaybackStarted':
         window.music.mopidy.playback.getCurrentTrack().then((track) => {
-          document.getElementById('#currSong').innerHTML = '' + track.name + ' -- ' + track.artists[0].name;
-	  window.music.mopidy.library.getImages([track.uri]).then(result => updateCoverArt(track.uri, result));
+          document.getElementById('currSong').innerHTML = '' + track.name + ' -- ' + track.artists[0].name;
+	        window.music.mopidy.library.getImages([track.uri]).then(result => updateCoverArt(track.uri, result));
         });
         break;
 
