@@ -33,12 +33,34 @@ header {
 	text-align: center;
 	color: #f39c12;
 }
+
+.slides {display: none;}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: fade;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .2} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .2} 
+  to {opacity: 1}
+}
+
 .spot-buttons {
 	margin-top: 5%;
 }
 .marquee {
   height: 35px;
-  width: 10500px;
+  width: 2000px;
 
   overflow: hidden;
   position: relative;
@@ -52,7 +74,7 @@ header {
   position: absolute;
   overflow: hidden;
 
-  animation: marquee 90s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 .marquee span {
