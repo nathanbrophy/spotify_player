@@ -37,8 +37,8 @@ header {
 	margin-top: 5%;
 }
 .marquee {
-  height: 25px;
-  width: 100%;
+  height: 35px;
+  width: 10500px;
 
   overflow: hidden;
   position: relative;
@@ -52,7 +52,7 @@ header {
   position: absolute;
   overflow: hidden;
 
-  animation: marquee 25s linear infinite;
+  animation: marquee 90s linear infinite;
 }
 
 .marquee span {
@@ -63,16 +63,16 @@ header {
 	text-align: left;
 	margin: 5% 2.5% 0 20%;
 }
-.message {
+.message, .weather-item-full {
 	margin: 0 0 0 5%;
 }
-#office-info-header {
+#office-info-header, #weather-info-header {
 	width: fit-content;
 	color: #b1b1b1;
 	border-bottom: thin solid #5c90a0;
 }
 #transit-info-header {
-	margin: auto;
+	margin: 5% auto auto auto;
 	width: fit-content;
 	color: #b1b1b1;
 	border-bottom: thin solid #5c90a0;
