@@ -27,7 +27,7 @@
 
 .section4 { /*weather*/
   grid-column: 1 / span 3;
-  grid-row: 7 / span 4;
+  grid-row: 7 / span 6;
 }
 
 .section5 { /*7day*/
@@ -54,11 +54,10 @@
 }
 
 .section10 { /*transit*/
-  grid-column: 9 / span 3;
+  grid-column: 10 / span 3;
   grid-row: 3 / span 9;
-  margin-left: 10%;
+  margin-right: 10%;
 }
-
 .transit_section {
   text-align: left;
 }
