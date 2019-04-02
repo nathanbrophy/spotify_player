@@ -96,7 +96,7 @@ function buildDynamicWeatherFull(fItem) {
 	var formattedDate = new Date(fItem.startTime);
 	var windDirection = getWeatherDirectionUnicode(fItem.windDirection);
 	var elem = `<div class="weather-item-full">
-					<p>${fItem.name} ${formattedDate.getDate()}/${formattedDate.getMonth()}</p>
+					<p>${fItem.name} ${formattedDate.getMonth() + 1}/${formattedDate.getDate()}</p>
 					<p>${fItem.shortForecast}</p>
 					<img src="${fItem.icon}" alt="weather icon ${fItem.number}">
 					<p>Feels Like ${fItem.temperature} &#186;${fItem.temperatureUnit}</p>
