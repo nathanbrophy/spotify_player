@@ -8,8 +8,7 @@ const setupSpotifyButtons = () => {
   spotDiv.style.display = 'block';
 }
 
-function displayTimes() {
-	//displayBusTimes();
-	//displayTrainTimes();
+function displayDynamicContent() {
 	displayAllTimes();
+	displayWeather();
 }
