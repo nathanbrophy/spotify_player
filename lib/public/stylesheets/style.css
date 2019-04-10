@@ -167,6 +167,89 @@ header {
   margin-top: 5em;
 }
 
+.spotify-header-row {
+  display: flex;
+  justify-content: center;
+}
+.spotify-header-row h3 {
+  margin-right: 1%;
+}
+.spotify-header-row a {
+  font-size: .7em;
+  margin: auto 0 auto 1%;
+}
+.spotify-header-row:hover {
+  cursor: pointer;
+}
+.hidden {
+  visibility: hidden;
+}
+.active {
+  visibility: visible;
+}
+.interactive-track-item {
+  font-size: .7em;
+  width: 100%;
+  margin: 5px auto;
+}
+.ilist-track-name {
+  text-align: left;
+  margin: auto auto auto 1%;
+}
+.ilist-track-length {
+  text-align: right;
+  margin: auto 1% auto auto;
+}
+.ilist-track-artist {
+  font-size: .65em;
+  margin: auto 1%;
+}
+.ilist-track-album {
+  font-size: .65em;
+  margin: auto 1%;
+}
+.interactive-track-item:nth-child(even) {
+  background-color: #323440;
+}
+.interactive-track-item:hover {
+  cursor: pointer;
+}
+#spotify-interative-list-container ul {
+  list-style: none;
+}
+#spotify-interative-list-container {
+  margin-top: 15px;
+  overflow-y: scroll;
+  height: 90%;
+}
+.ilist-row0 {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.ilist-row1 {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+#spotify-drag-to-components * {
+  margin: auto .5%;
+}
+#consume-toggle:hover {
+  cursor: pointer;
+}
+#consume-toggle {
+  font-size: .85em;
+}
+#delete-song {
+  font-size: .85em;
+}
+.on {
+  color: green;
+}
+.off {
+  color: #b1b1b1;
+}
 /************************************************************************************
 MEDIA QUERIES
 *************************************************************************************/
