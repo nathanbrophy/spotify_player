@@ -71,6 +71,8 @@ class SpotifyController {
           if (!consume.classList.contains('on')) {
             consume.classList.add('on');
           }
+          var volume = document.getElementById('music-volume-control').value;
+          mopidy.mixer.setVolume(parseInt(volume));
           mopidy.playback.getCurrentTrack().then((track) => {
             this.state.currentTrack = track;
             if (this.state.currentTrack) {

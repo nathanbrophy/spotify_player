@@ -18,12 +18,9 @@
       <p id='currSong'>No Song Currently Playing</p>
       <img id='current-track-image' alt='spotify album art'>
     </div>
-    <div id="spotify-drag-to-components">
-      <i id="delete-song" ondrop="ilistDropDelete(event)" ondragover="ilistAllowDrop(event)" title="Drag list item over to delete it" class="far fa-trash-alt"></i>
-      <i class="fas fa-utensils" id="consume-toggle" title="Click to toggle the mpd consume" onclick="toggleConsume(this)"></i>
-    </div>
+    
     <div id="spotify-interative-list-container" class="hidden">
-      <ul></ul>
+      <ul id="ilist-ul"></ul>
     </div>
   </section>
 
@@ -44,16 +41,25 @@
   </section>
 
   <section class='grid-item section6 spot-buttons'>
-    <img id='sptPrvBtn' class="cursor-hover" src='../imgs/skip-back.svg' onclick="window.music.sptPreviousTrack()">
-  </section>
-
-  <section class='grid-item section7 spot-buttons'>
-    <img id='sptPlayBtn' class='cursor-hover' src='../imgs/play-circle.svg' onclick="window.music.sptPlay()">
-    <img id='sptPauseBtn' class='cursor-hover' src='../imgs/pause-circle.svg' onclick="window.music.sptPause()">
+    <div id="spot-button-wrapper">
+      <img id='sptPrvBtn' class="cursor-hover" src='../imgs/skip-back.svg' onclick="window.music.sptPreviousTrack()">
+      <img id='sptPlayBtn' class='cursor-hover' src='../imgs/play-circle.svg' onclick="window.music.sptPlay()">
+      <img id='sptPauseBtn' class='cursor-hover' src='../imgs/pause-circle.svg' onclick="window.music.sptPause()">
+      <img id='sptNextBtn' class='cursor-hover' src='../imgs/skip-forward.svg' onclick="window.music.sptNextTrack()">
+    </div>  
   </section>
 
   <section class='grid-item section8 spot-buttons'>
-    <img id='sptNextBtn' class='cursor-hover' src='../imgs/skip-forward.svg' onclick="window.music.sptNextTrack()">
+    <div id="spotify-drag-to-components">
+      <i id="delete-song" ondrop="ilistDropDelete(event)" ondragover="ilistAllowDrop(event)" title="Drag list item over to delete it" class="far fa-trash-alt"></i>
+      <i class="fas fa-utensils" id="consume-toggle" title="Click to toggle the mpd consume" onclick="toggleConsume(this)"></i>
+      <div id="volume-control-wrapper">
+        <i class="fas fa-volume-down" onclick="toggleMute(this)" id="volume-down"></i>
+        <i class="fas fa-volume-mute" onclick="toggleMute(this)" id="volume-mute"></i>
+        <input type="range" name="volume" min="1" max="100" value="25" class="slide-bar" id="music-volume-control" onchange="volumeChanged(this)">
+        <i class="fas fa-volume-up"></i>
+      </div>
+    </div>
   </section>
 
   <section class='grid-item section9'>

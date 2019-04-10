@@ -218,9 +218,10 @@ header {
   list-style: none;
 }
 #spotify-interative-list-container {
-  margin-top: 15px;
   overflow-y: scroll;
   height: 90%;
+  width: 80%;
+  margin: 15px auto;
 }
 .ilist-row0 {
   width: 100%;
@@ -232,8 +233,22 @@ header {
   display: flex;
   flex-wrap: nowrap;
 }
+
+#spotify-drag-to-components {
+  display: flex;
+  justify-content: flex-end;
+}
+#spotify-drag-to-components input[type=rage] {
+  justify-content: right;
+}
 #spotify-drag-to-components * {
-  margin: auto .5%;
+  margin: auto 1.5%;
+}
+#spot-button-wrapper {
+  display: flex;
+}
+#spot-button-wrapper * {
+  margin: auto 2%;
 }
 #consume-toggle:hover {
   cursor: pointer;
@@ -249,6 +264,48 @@ header {
 }
 .off {
   color: #b1b1b1;
+}
+#volume-control-wrapper {
+  display: contents;
+}
+#volume-mute {
+  display: none;
+}
+#volume-mute:hover, #volume-down:hover {
+  cursor: pointer;
+}
+.slide-bar {
+  -webkit-appearance: none;
+  width: 33% !important;
+  height: 7px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slide-bar:hover {
+  opacity: 1;
+}
+
+.slide-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slide-bar::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
 }
 /************************************************************************************
 MEDIA QUERIES
