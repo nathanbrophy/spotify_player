@@ -184,6 +184,16 @@ header {
 #search-form {
   margin: 15px auto;
 }
+.search-item-options {
+  font-size: 70%;
+  margin: auto 1%;
+}
+.search-result {
+  cursor: text;
+}
+.search-result a {
+  cursor: pointer;
+}
 #search-form input[type=search]{
   background-color: #282a36;
   color: #b1b1b1;
@@ -193,6 +203,10 @@ header {
   padding-right: 10px;
   border: none;
   border-bottom: thin solid #5c90a0;
+}
+#search-form input[type=search]:after{
+  background-color: #282a36;
+  color: #b1b1b1;
 }
 
 .hidden {
@@ -205,6 +219,24 @@ header {
   font-size: .7em;
   width: 100%;
   margin: 5px auto;
+}
+.dynamic-menu {
+  margin: auto 2%;
+}
+.dynamic-menu:hover {
+  opacity: .5; 
+}
+#search-results {
+  height: 85%;
+  overflow-y: scroll;
+}
+#spotify-search-container {
+  height: 90%;
+}
+#search-results-list {
+  list-style: none;
+  height: 90%;
+  padding-left: 15px;
 }
 .ilist-track-name {
   text-align: left;
