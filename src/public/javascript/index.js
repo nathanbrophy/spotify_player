@@ -1,5 +1,6 @@
 'use strict';
 
+var containers;
 const setupSpotifyButtons = () => {
   document.querySelector('#sptPlayBtn').addEventListener('click', () => {music.sptPlay();});
   document.querySelector('#sptPauseBtn').addEventListener('click', () => {music.sptPause();});
@@ -11,6 +12,41 @@ const setupSpotifyButtons = () => {
 function displayDynamicContent() {
 	displayAllTimes();
 	displayWeather();
+
+	containers = [
+					{
+						name : 'album',
+						container : document.getElementById("spotify-info-container")
+					},
+					{
+						name: 'ilist',
+						container  : document.getElementById("spotify-interative-list-container")
+					},
+					{
+						name: 'search',
+						container : document.getElementById('spotify-search-container')
+					}
+				 ];
+}
+function toggleDynamicPages(page) {
+	console.log(containers);
+	for (var i = 0; i < containers.length; i++) {
+		var curr = containers[i];
+		if (page == curr.name) {
+			curr.container.classList.remove('hidden');
+			curr.container.classList.add('active');
+		}
+		else {
+			if (curr.container.classList.contains('active')) {
+				curr.container.classList.remove('active');
+				curr.container.classList.add('hidden');
+			}
+		}
+	}
+}
+
+function toggleSearch() {
+	toggleDynamicPages('search');
 }
 
 function toggleSpotifyDiv() {
@@ -19,20 +55,12 @@ function toggleSpotifyDiv() {
 
 	var listDisplayed = containerList.classList.contains("active");
 	if (!listDisplayed) {
-		containerAlbumArt.classList.remove("active");
-		containerAlbumArt.classList.add("hidden");
-
-		containerList.classList.remove("hidden");
-		containerList.classList.add("active");
+		toggleDynamicPages('ilist');
 
 		document.getElementById('toggle-list-link').innerHTML = "Toggle Album Info";
 	}
 	else {
-		containerAlbumArt.classList.remove("hidden");
-		containerAlbumArt.classList.add("active");
-
-		containerList.classList.remove("active");
-		containerList.classList.add("hidden");
+		toggleDynamicPages('album');
 
 		document.getElementById('toggle-list-link').innerHTML = "Toggle List";
 	}
