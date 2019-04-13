@@ -7,8 +7,6 @@ html {
 }
 
 body {
-  background-color: #282a36;
-  color: #b1b1b1;
   font-size: 24px;
 }
 
@@ -18,7 +16,6 @@ svg:not(:root) {
 
 h3 {
 	margin: 5px 0;
-	color: #d86aab;
 }
 
 h1 {
@@ -26,12 +23,10 @@ h1 {
 }
 
 a {
-  color: #00B7FF;
 }
 
 header {
 	text-align: center;
-	color: #f39c12;
 }
 
 .slides {display: none;}
@@ -90,13 +85,11 @@ header {
 }
 #office-info-header, #weather-info-header {
 	width: fit-content;
-	color: #b1b1b1;
 	border-bottom: thin solid #5c90a0;
 }
 #transit-info-header {
 	margin: 5% auto auto auto;
 	width: fit-content;
-	color: #b1b1b1;
 	border-bottom: thin solid #5c90a0;
 }
 /** marquee CSS found at: https://codepen.io/strongpom/pen/qmooZe */
@@ -105,7 +98,6 @@ header {
     height: 85%;
     margin: 2em auto;
     overflow: hidden;
-    background: #282a36;
     position: relative;
 }
 
@@ -137,7 +129,7 @@ header {
     position: absolute;
     width: 100%; 
     height: 2em;
-    background-image: linear-gradient(180deg, #282a36, rgba(255,255,255,0));
+    background-image: linear-gradient(180deg, white, rgba(255,255,255,0));
 }
 
 .blur:after, .blur::after {
@@ -195,8 +187,6 @@ header {
   cursor: pointer;
 }
 #search-form input[type=search]{
-  background-color: #282a36;
-  color: #b1b1b1;
   width: 95%;
   margin: auto auto auto 0;
   padding-left: 5px;
@@ -205,8 +195,6 @@ header {
   border-bottom: thin solid #5c90a0;
 }
 #search-form input[type=search]:after{
-  background-color: #282a36;
-  color: #b1b1b1;
 }
 
 .hidden {
@@ -255,7 +243,6 @@ header {
   margin: auto 1%;
 }
 .interactive-track-item:nth-child(even) {
-  background-color: #323440;
 }
 .interactive-track-item:hover {
   cursor: pointer;
@@ -309,7 +296,7 @@ header {
   color: green;
 }
 .off {
-  color: #b1b1b1;
+  color: black;
 }
 #volume-control-wrapper {
   display: contents;
@@ -325,9 +312,9 @@ header {
   width: 33% !important;
   height: 7px;
   border-radius: 5px;
-  background: #d3d3d3;
   outline: none;
   opacity: 0.7;
+  background: grey;
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
@@ -342,7 +329,7 @@ header {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #4CAF50;
+  background: black;
   cursor: pointer;
 }
 
@@ -350,7 +337,7 @@ header {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #4CAF50;
+  background: black;
   cursor: pointer;
 }
 /************************************************************************************

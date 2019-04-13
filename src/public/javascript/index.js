@@ -66,3 +66,9 @@ function toggleSpotifyDiv() {
 	}
 	generateList();
 }
+
+function changeTheme(theme) {
+	var link = document.getElementById('theme');
+	var url = '/stylesheets/' + theme + "_theme.css";
+	link.href = url;
+}

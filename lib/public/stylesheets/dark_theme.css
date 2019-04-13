@@ -1,0 +1,63 @@
+@charset "UTF-8";
+body {
+  background-color: #282a36;
+  color: #b1b1b1;
+}
+h3 {
+	color: #d86aab;
+}
+a {
+  color: #00B7FF;
+}
+header {
+	color: #f39c12;
+}
+/* Fading animation */
+#office-info-header, #weather-info-header {
+	color: #b1b1b1;
+	border-bottom: thin solid #5c90a0;
+}
+#transit-info-header {
+	color: #b1b1b1;
+	border-bottom: thin solid #5c90a0;
+}
+/** marquee CSS found at: https://codepen.io/strongpom/pen/qmooZe */
+.container {
+    background: #282a36;
+}
+.blur:before, .blur::before,
+.blur:after,  .blur::after {
+    background-image: linear-gradient(180deg, #282a36, rgba(255,255,255,0));
+}
+
+#search-form input[type=search]{
+  background-color: #282a36;
+  color: #b1b1b1;
+  border: none;
+  border-bottom: thin solid #5c90a0;
+}
+#search-form input[type=search]:after{
+  background-color: #282a36;
+  color: #b1b1b1;
+}
+.interactive-track-item:nth-child(even) {
+  background-color: #323440;
+}
+.on {
+  color: green;
+}
+.off {
+  color: #b1b1b1;
+}
+.slide-bar {
+  border-radius: 5px;
+  background: #d3d3d3;
+}
+.slide-bar::-webkit-slider-thumb {
+  border-radius: 50%;
+  background: #4CAF50;
+}
+
+.slide-bar::-moz-range-thumb {
+  background: #4CAF50;
+}

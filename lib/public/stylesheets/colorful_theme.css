@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* CSS background inspired by https://codepen.io/P1N2O/pen/pyBNzX?css-preprocessor=less post*/
+body {
+  font-size: 24px;
+  color: #fff;
+  background: linear-gradient(-45deg, #52d1ee, #9d52ee, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 45s ease infinite;
+  -moz-animation: Gradient 45s ease infinite;
+  animation: Gradient 45s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+ee52d1    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.blur:before, .blur::before,
+.blur:after,  .blur::after {
+    background-image: none;
+}
