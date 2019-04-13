@@ -5,9 +5,11 @@
 
   <section class='grid-item section1'>
     <h1>{{title}}</h1>
-    <input type="radio" name="style" value="default" onclick="changeTheme(this.value)" checked>Default
-    <input type="radio" name="style" value="dark" onclick="changeTheme(this.value)">Dark
-    <input type="radio" name="style" value="colorful" onclick="changeTheme(this.value)">Colorful
+      <div id='theme-picker'>
+        <a onclick="changeTheme('default')" id='light-theme' class="current-theme"><b>Light</b></a>
+        <a onclick="changeTheme('dark')" id='dark-theme'><b>Dark</b></a>
+        <a onclick="changeTheme('colorful')" id='colorful-theme'><b>Colorful</b></a>
+      </div>
     <hr>
   </section>
 
@@ -19,7 +21,7 @@
     </div>
     <div id="spotify-info-container" class="active">
       <p id='currSong'>No Song Currently Playing</p>
-      <img id='current-track-image' alt='spotify album art'>
+      <img id='current-track-image' alt='spotify album art' src="../imgs/test_image.jpg">
     </div>
     
     <div id="spotify-interative-list-container" class="hidden">
@@ -54,10 +56,10 @@
 
   <section class='grid-item section6 spot-buttons'>
     <div id="spot-button-wrapper">
-      <img id='sptPrvBtn' class="cursor-hover" src='../imgs/skip-back.svg' onclick="window.music.sptPreviousTrack()">
-      <img id='sptPlayBtn' class='cursor-hover' src='../imgs/play-circle.svg' onclick="window.music.sptPlay()">
-      <img id='sptPauseBtn' class='cursor-hover' src='../imgs/pause-circle.svg' onclick="window.music.sptPause()">
-      <img id='sptNextBtn' class='cursor-hover' src='../imgs/skip-forward.svg' onclick="window.music.sptNextTrack()">
+      <i class="fas fa-backward cursor-hover" onclick="window.music.sptPreviousTrack()" id='sptPrvBtn'></i>
+      <i class="fas fa-play cursor-hover" onclick="window.music.sptPlay()" id='sptPlayBtn'></i>
+      <i class="fas fa-pause cursor-hover" onclick="window.music.sptPause()" id='sptPauseBtn'></i>
+      <i class="fas fa-forward cursor-hover" onclick="window.music.sptNextTrack()" id='sptNextBtn'></i>
     </div>  
   </section>
 

@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-size: 24px;
+  font-size: 1.3em;
 }
 
 svg:not(:root) {
@@ -29,6 +29,22 @@ header {
 	text-align: center;
 }
 
+#theme-picker {
+  margin: auto;
+}
+#theme-picker a {
+  margin: auto 1%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.current-theme {
+  text-decoration: underline !important;
+}
+
+input[type=radio] {
+  margin: auto .5% auto 2%;
+}
 .slides {display: none;}
 /* Fading animation */
 .fade {
@@ -84,17 +100,21 @@ header {
 	margin: 0 0 0 5%;
 }
 #office-info-header, #weather-info-header {
+  text-align: center;
+  text-transform: uppercase;
 	width: fit-content;
 	border-bottom: thin solid #5c90a0;
+  margin: 10px auto;
 }
 #transit-info-header {
+  text-transform: uppercase;
 	margin: 5% auto auto auto;
 	width: fit-content;
 	border-bottom: thin solid #5c90a0;
 }
 /** marquee CSS found at: https://codepen.io/strongpom/pen/qmooZe */
 .container {
-    width: 20em;
+    width: 18em;
     height: 85%;
     margin: 2em auto;
     overflow: hidden;

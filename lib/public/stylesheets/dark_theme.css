@@ -54,7 +54,6 @@ header {
   background: #d3d3d3;
 }
 .slide-bar::-webkit-slider-thumb {
-  border-radius: 50%;
   background: #4CAF50;
 }
 

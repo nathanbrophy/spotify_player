@@ -21,13 +21,13 @@
 
 .section3 { /*office*/
   grid-column: 1 / span 3;
-  grid-row: 3 / span 4;
+  grid-row: 3 / span 3;
   text-align: right;
 }
 
 .section4 { /*weather*/
   grid-column: 1 / span 3;
-  grid-row: 7 / span 6;
+  grid-row: 6 / span 6;
 }
 
 .section5 { /*7day*/
@@ -50,7 +50,7 @@
 
 .section9 { /*footer*/
   grid-column: 4 / span 6;
-  grid-row: 12 / span 1;
+  grid-row: 11 / span 1;
 }
 
 .section10 { /*transit*/

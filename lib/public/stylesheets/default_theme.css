@@ -19,9 +19,6 @@ header {
   border-bottom: thin solid #5c90a0;
 }
 /** marquee CSS found at: https://codepen.io/strongpom/pen/qmooZe */
-.container {
-    background: #282a36;
-}
 .blur:before, .blur::before,
 .blur:after,  .blur::after {
     background-image: linear-gradient(180deg, white, rgba(255,255,255,0));
@@ -48,7 +45,6 @@ header {
 }
 .slide-bar {
   border-radius: 5px;
-  background: #d3d3d3;
 }
 .slide-bar::-webkit-slider-thumb {
   border-radius: 50%;
