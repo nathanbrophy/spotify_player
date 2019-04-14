@@ -15,13 +15,13 @@
 
   <section class='spotify grid-item section2'>
     <div class="spotify-header-row">
-      <h3>Now Playing</h3>
       <a onclick="toggleSpotifyDiv()" id="toggle-list-link">Toggle List</a>
       <a onclick="toggleSearch()" id="toggle-search-link">Search</a>
     </div>
     <div id="spotify-info-container" class="active">
-      <p id='currSong'>No Song Currently Playing</p>
       <img id='current-track-image' alt='spotify album art' src="../imgs/test_image.jpg">
+
+      <p id='currSong'>No Song Currently Playing</p>
     </div>
     
     <div id="spotify-interative-list-container" class="hidden">
@@ -54,16 +54,13 @@
     <div id="weather-wrapper"></div>
   </section>
 
-  <section class='grid-item section6 spot-buttons'>
-    <div id="spot-button-wrapper">
-      <i class="fas fa-backward cursor-hover" onclick="window.music.sptPreviousTrack()" id='sptPrvBtn'></i>
-      <i class="fas fa-play cursor-hover" onclick="window.music.sptPlay()" id='sptPlayBtn'></i>
-      <i class="fas fa-pause cursor-hover" onclick="window.music.sptPause()" id='sptPauseBtn'></i>
-      <i class="fas fa-forward cursor-hover" onclick="window.music.sptNextTrack()" id='sptNextBtn'></i>
-    </div>  
-  </section>
-
   <section class='grid-item section8 spot-buttons'>
+    <div id="spot-button-wrapper">
+        <i class="fas fa-backward cursor-hover" onclick="window.music.sptPreviousTrack()" id='sptPrvBtn'></i>
+        <i class="fas fa-play cursor-hover" onclick="window.music.sptPlay()" id='sptPlayBtn'></i>
+        <i class="fas fa-pause cursor-hover" onclick="window.music.sptPause()" id='sptPauseBtn'></i>
+        <i class="fas fa-forward cursor-hover" onclick="window.music.sptNextTrack()" id='sptNextBtn'></i>
+      </div>  
     <div id="spotify-drag-to-components">
       <i id="delete-song" ondrop="ilistDropDelete(event)" ondragover="ilistAllowDrop(event)" title="Drag list item over to delete it" class="far fa-trash-alt"></i>
       <i class="fas fa-utensils" id="consume-toggle" title="Click to toggle the mpd consume" onclick="toggleConsume(this)"></i>
@@ -75,7 +72,7 @@
       </div>
     </div>
   </section>
-
+<!--
   <section class='grid-item section9'>
     <div class="marquee">
       <div>
@@ -84,7 +81,7 @@
       </div>
     </div>
   </section>
-
+-->
   <section class="grid-item section10 transit_section">
     <h3 id="transit-info-header">Transit Info</h3>
     <div class="container blur">

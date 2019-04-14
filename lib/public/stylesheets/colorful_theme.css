@@ -87,3 +87,19 @@ a {
 .transit-item-wrapper {
   border-color: #41f468;
 }
+#search-form input[type=search] {
+  color: white;
+  background: none;
+  border-bottom: thin solid #41f468;
+}
+
+
+#search-form input[type=search]::placeholder {
+  color: white;
+}
+#search-form input[type=search]:-ms-input-placeholder {
+  color: white;
+}
+#search-form input[type=search]::-ms-input-placeholder {
+  color: white;
+}

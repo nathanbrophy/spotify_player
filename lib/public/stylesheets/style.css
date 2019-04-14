@@ -65,10 +65,6 @@ input[type=radio] {
   from {opacity: .2} 
   to {opacity: 1}
 }
-
-.spot-buttons {
-	margin-top: 5%;
-}
 .marquee {
   height: 35px;
   width: 2000px;
@@ -171,14 +167,24 @@ input[type=radio] {
   0% { left: 0; }
   100% { left: -100%; }
 }
+.cursor-hover {
+  opacity: .7;
+}
 .cursor-hover:hover {
 	cursor: pointer;
+  opacity: 1;
 }
 
 .linkToControlPanel {
   margin-top: 5em;
 }
-
+#currSong {
+  font-size: 1.2em;
+}
+#current-track-image {
+  margin: 10px auto;
+  max-height: 450px;
+}
 .spotify-header-row {
   display: flex;
   justify-content: center;
@@ -187,8 +193,7 @@ input[type=radio] {
   margin-right: 1%;
 }
 .spotify-header-row a {
-  font-size: .7em;
-  margin: auto 0 auto 1%;
+  margin: auto 2%;
 }
 .spotify-header-row:hover {
   cursor: pointer;
@@ -289,19 +294,29 @@ input[type=radio] {
 
 #spotify-drag-to-components {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin: 10px auto;
 }
 #spotify-drag-to-components input[type=rage] {
   justify-content: right;
 }
 #spotify-drag-to-components * {
-  margin: auto 1.5%;
+  margin: auto 1%;
 }
 #spot-button-wrapper {
   display: flex;
+  justify-content: center;
+  margin: 10px auto;
 }
 #spot-button-wrapper * {
-  margin: auto 2%;
+  margin: auto 1%;
+}
+#sptPrvBtn, #sptNextBtn {
+  margin: auto 5%;
+}
+.spot-buttons {
+  padding: 2% 0;
+  font-size: .85em;
 }
 #consume-toggle:hover {
   cursor: pointer;
@@ -329,7 +344,7 @@ input[type=radio] {
 }
 .slide-bar {
   -webkit-appearance: none;
-  width: 33% !important;
+  width: 15% !important;
   height: 7px;
   border-radius: 5px;
   outline: none;
