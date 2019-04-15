@@ -93,7 +93,11 @@ input[type=radio] {
 	margin: 5% 2.5% 0 20%;
 }
 .message, .weather-item-full {
-	margin: 0 0 0 5%;
+	width: fit-content;
+  margin: auto;
+  text-align: left;
+  max-width: 250px;
+  min-width: 230px;
 }
 #office-info-header, #weather-info-header {
   text-align: center;
@@ -110,7 +114,7 @@ input[type=radio] {
 }
 /** marquee CSS found at: https://codepen.io/strongpom/pen/qmooZe */
 .container {
-    width: 18em;
+    width: 22em;
     height: 85%;
     margin: 2em auto;
     overflow: hidden;
