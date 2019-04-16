@@ -103,3 +103,10 @@ a {
 #search-form input[type=search]::-ms-input-placeholder {
   color: white;
 }
+#time-bar-background {
+  opacity: 1;
+  background: #aaaaaa;
+}
+#time-bar {
+  background: #ffffff;
+}

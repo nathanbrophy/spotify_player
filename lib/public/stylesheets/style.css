@@ -206,7 +206,7 @@ input[type=radio] {
   margin: 15px auto;
 }
 .search-item-options {
-  font-size: 70%;
+  font-size: 85%;
   margin: auto 1%;
 }
 .search-result {
@@ -233,7 +233,7 @@ input[type=radio] {
   visibility: visible;
 }
 .interactive-track-item {
-  font-size: .7em;
+  font-size: .85em;
   width: 100%;
   margin: 5px auto;
 }
@@ -378,6 +378,33 @@ input[type=radio] {
   border-radius: 50%;
   background: black;
   cursor: pointer;
+}
+#back {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+#time-bar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+#time-bar-wrapper p {
+  margin: auto 1%;
+}
+#time-bar-background {
+  width: 45%;
+  height: 4px;
+  background: #cdcdcd;
+  margin: auto 1%;
+  border-radius: 50px;
+  opacity: .75;
+}
+#time-bar {
+  width: 0%;
+  height: 4px;
+  background: #3be24b;
+  border-radius: 50px;
 }
 /************************************************************************************
 MEDIA QUERIES

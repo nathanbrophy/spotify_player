@@ -2,7 +2,6 @@
 
 <section class="grid-container">
   <script type="text/javascript" src="/javascript/index.js"></script>
-
   <section class='grid-item section1'>
     <h1>{{title}}</h1>
       <div id='theme-picker'>
@@ -60,7 +59,14 @@
         <i class="fas fa-play cursor-hover" onclick="window.music.sptPlay()" id='sptPlayBtn'></i>
         <i class="fas fa-pause cursor-hover" onclick="window.music.sptPause()" id='sptPauseBtn'></i>
         <i class="fas fa-forward cursor-hover" onclick="window.music.sptNextTrack()" id='sptNextBtn'></i>
-      </div>  
+      </div>
+    <div id='time-bar-wrapper'>
+      <p id='current-time'>0:00</p>
+      <div id='time-bar-background'>
+        <div id='time-bar'></div>
+      </div>
+      <p id='total-time'>0:00</p>
+    </div>
     <div id="spotify-drag-to-components">
       <i id="delete-song" ondrop="ilistDropDelete(event)" ondragover="ilistAllowDrop(event)" title="Drag list item over to delete it" class="far fa-trash-alt"></i>
       <i class="fas fa-utensils" id="consume-toggle" title="Click to toggle the mpd consume" onclick="toggleConsume(this)"></i>
@@ -72,16 +78,6 @@
       </div>
     </div>
   </section>
-<!--
-  <section class='grid-item section9'>
-    <div class="marquee">
-      <div>
-        <span>Mavboard is a student developed project utilizing nodeJS to show bus, weather and music information. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Current Iteration: 3  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next Iteration Goals: Add weather and an interactive music UI</span>
-        <span>Mavboard is a student developed project utilizing nodeJS to show bus, weather and music information. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Current Iteration: 3  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next Iteration Goals: Add weather and an interactive music UI</span>
-      </div>
-    </div>
-  </section>
--->
   <section class="grid-item section10 transit_section">
     <h3 id="transit-info-header">Transit Info</h3>
     <div class="container blur">
@@ -91,3 +87,5 @@
     </div>
   </section>
 </section>
+
+<input type="text" name="copy-to-ckipboard" id="copy-to-ckipboard" style="position: absolute; left: -999999px;">
