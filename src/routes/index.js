@@ -29,7 +29,12 @@ mopidy.on('event:trackPlaybackPaused', () => {
 
 // render home page
 router.get('/', (req, res, next) => {
-  res.render('index', {title: 'Mavboard'});
+  if (req.session.success) {
+    res.render('index', {title: 'Mavboard'});
+  } else {
+    res.render('login', { errors: req.session.errors });
+    req.session.errors = null;
+	}
 });
 router.get('/currentTime', (req, res, next) => {
 	var data = JSON.stringify({
@@ -37,5 +42,25 @@ router.get('/currentTime', (req, res, next) => {
 		total: totalTime
 	});
 	res.send(data);
+});
+
+router.get('/login', function(req, res){
+  res.render('login', { errors: req.session.errors });
+  req.session.errors = null;
+});
+
+router.post('/login', function(req, res) {
+  let name = req.body.name;
+  //req.checkBody('name', 'Name is required').notEmpty();
+  const errors = false;
+  if(errors){
+    req.session.errors = errors;
+    res.redirect('/login');
+  }
+  else{
+    req.session.success = true;
+    res.redirect('/');
+  }
+
 });
 module.exports = router;

@@ -5,9 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs = require('express-hbs');
-
+var session = require('express-session');
 var index = require('./lib/routes/index');
-
+var user = require('./lib/routes/user.route');
+var expressValidator = require('express-validator');
 var app = express();
 
 // view engine setup
@@ -22,9 +23,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'lib/public')));
-
+app.use(session({ secret: 'mav', resave: false, saveUninitialized: true, }));
 app.use('/', index);
-
+app.use('/login', index);
+app.use(expressValidator());
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
