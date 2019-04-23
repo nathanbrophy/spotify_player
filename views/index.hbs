@@ -8,6 +8,7 @@
         <a onclick="changeTheme('default')" id='light-theme' class="current-theme"><b>Light</b></a>
         <a onclick="changeTheme('dark')" id='dark-theme'><b>Dark</b></a>
         <a onclick="changeTheme('colorful')" id='colorful-theme'><b>Colorful</b></a>
+        <a onclick="changeTheme('dynamic')" id='dynamic-theme'><b>Dynamic</b></a>
       </div>
     <hr>
   </section>
@@ -18,7 +19,7 @@
       <a onclick="toggleSearch()" id="toggle-search-link">Search</a>
     </div>
     <div id="spotify-info-container" class="active">
-      <img id='current-track-image' alt='spotify album art' src="../imgs/test_image.jpg">
+      <img id='current-track-image' alt='spotify album art' crossorigin="anonymous" onchange='changeBgGradient(this)' onload="changeBgGradient(this)">
 
       <p id='currSong'>No Song Currently Playing</p>
     </div>

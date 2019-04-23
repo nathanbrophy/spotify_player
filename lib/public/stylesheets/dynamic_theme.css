@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/* CSS background inspired by https://codepen.io/P1N2O/pen/pyBNzX?css-preprocessor=less post*/
+body {
+  color: #fff;
+  background: linear-gradient(-45deg, #ee5252, #6652ee);
+  background-size: 200% 200%;
+  /*-webkit-animation: Gradient 45s ease infinite;
+  -moz-animation: Gradient 45s ease infinite;
+  animation: Gradient 45s ease infinite;*/
+}
+
+@-webkit-keyframes Gradient {
+ee52d1    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+a {
+  color: #41f468;
+}
+
+.dep_desc {
+  color: #41f468;
+}
+
+#transit-info-header {
+  border-bottom: thin solid #41f468;
+}
+#office-info-header {
+  border-bottom: thin solid #41f468;
+}
+#weather-info-header {
+  border-bottom: thin solid #41f468;
+}
+
+.blur:before, .blur::before,
+.blur:after,  .blur::after {
+    background-image: none;
+}
+.slide-bar {
+  background: white;
+}
+.slide-bar::-webkit-slider-thumb {
+  background: #41f468;
+}
+
+.slide-bar::-moz-range-thumb {
+  background: #41f468;
+}
+
+.on {
+  color: #41f468;
+}
+.off {
+  color: white;
+}
+}
+.transit-item-wrapper {
+  border-color: #41f468;
+}
+#search-form input[type=search] {
+  color: white;
+  background: none;
+  border-bottom: thin solid #41f468;
+}
+
+
+#search-form input[type=search]::placeholder {
+  color: white;
+}
+#search-form input[type=search]:-ms-input-placeholder {
+  color: white;
+}
+#search-form input[type=search]::-ms-input-placeholder {
+  color: white;
+}
+#time-bar-background {
+  opacity: 1;
+  background: #aaaaaa;
+}
+#time-bar {
+  background: #ffffff;
+}

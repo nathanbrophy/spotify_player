@@ -6,7 +6,7 @@ const mopidy = new Mopidy({
 	webSocketUrl : 'ws://192.168.140.99:6680/mopidy/ws'
 });
 
-var currentTime = 0, totalTime, paused = false, intervalfn;
+var currentTime = 0, totalTime=0, paused = false, intervalfn;
 
 mopidy.on('event:trackPlaybackStarted', () => {
 	mopidy.playback.getCurrentTrack().then((track) => {

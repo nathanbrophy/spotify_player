@@ -43,7 +43,7 @@ function playTrack(elem, next) {
 	window.music.mopidy.tracklist.add(null, 1, _uri);
 	if (!next) {
 		window.music.mopidy.playback.next();
-		window.music.play();
+		window.music.mopidy.play();
 	}
 }
 function addTrackToQueue(elem) {
