@@ -14,7 +14,7 @@ html, body {
 }
 body {
   color: var(--main-text-color);
-  background: linear-gradient(-45deg, #ee5252, #6652ee);
+  background: linear-gradient(-45deg, rgb(68, 0, 0), rgb(0, 0, 78));
 }
 
 a {
