@@ -28,6 +28,11 @@ a {
 header {
 	text-align: center;
 }
+#toggle-content-areas {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
 
 #theme-picker {
   margin: auto;

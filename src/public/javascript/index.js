@@ -196,3 +196,33 @@ function zigZag(agent) {
 	agent.play('Alert');
 	agent.speak('WOOOO that was fun!!!');
 }
+
+function toggleContent(elem) {
+	console.log(elem, elem.value, elem.checked);
+	switch (elem.id) {
+		case 'o-info':
+			if (elem.checked) {
+				document.getElementById('office-info-section').style.display = 'grid';
+			}
+			else {
+				document.getElementById('office-info-section').style.display = 'none';
+			}
+			break;
+		case 'w-info':
+			if (elem.checked) {
+				document.getElementById('weather-info-section').style.display = 'grid';
+			}
+			else {
+				document.getElementById('weather-info-section').style.display = 'none';
+			}
+			break;
+		default:
+			if (elem.checked) {
+				document.getElementById('transit-info-section').style.display = 'grid';
+			}
+			else {
+				document.getElementById('transit-info-section').style.display = 'none';
+			}
+			break;
+	}
+}

@@ -3,6 +3,16 @@
 <section class="grid-container">
   <script type="text/javascript" src="/javascript/index.js"></script>
   <section class='grid-item section1'>
+    <div id="toggle-content-areas">
+      <input type="checkbox" name="o-info" id='o-info' onchange="toggleContent(this)" checked>
+      <label for="o-info">office info</label>
+
+      <input type="checkbox" name="w-info" id='w-info' onchange="toggleContent(this)" checked>
+      <label for="w-info">Weather info</label>
+
+      <input type="checkbox" name="t-info" id='t-info' onchange="toggleContent(this)" checked>
+      <label for="t-info">Transit info</label>
+    </div>
     <h1>{{title}}</h1>
       <div id='theme-picker'>
         <a title='classic light theme' onclick="changeTheme('default')" id='light-theme' class="current-theme"><b>Light</b></a>
@@ -39,7 +49,7 @@
     </div>
   </section>
 
-  <section class='grid-item section3 info-fields'>
+  <section class='grid-item section3 info-fields' id='office-info-section'>
     <h3 id="office-info-header">Office Info</h3>
 
     <div class="message">
@@ -50,7 +60,7 @@
     </div>
   </section>
 
-  <section class='grid-item section4 info-fields'>
+  <section class='grid-item section4 info-fields' id='weather-info-section'>
     <h3 id="weather-info-header">Weather Info</h3>
     <div id="weather-wrapper"></div>
   </section>
@@ -80,7 +90,7 @@
       </div>
     </div>
   </section>
-  <section class="grid-item section10 transit_section">
+  <section class="grid-item section10 transit_section" id="transit-info-section">
     <h3 id="transit-info-header">Transit Info</h3>
     <div class="container blur">
       <ul class="slider" id="transit-marquee">
