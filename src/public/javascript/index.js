@@ -144,7 +144,7 @@ function enableClippy() {
 		var intTime = Math.floor(Math.random() * 11);
 		setInterval(function() {
 			zigZag(agent);
-		}, intTime * 1000);
+		}, intTime * 3000);
 	});
 }
 
