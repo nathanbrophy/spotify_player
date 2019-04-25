@@ -1,30 +1,38 @@
 @charset "UTF-8";
-/* CSS background inspired by https://codepen.io/P1N2O/pen/pyBNzX?css-preprocessor=less post*/
+
+:root {
+  --main-text-color: white;
+  --main-border-color: #41f468;
+  --main-anchor-color: #41f468;
+  --main-timebar-background: #aaaaaa;
+  --main-timebar: #ffffff;
+  --main-consume-off: white;
+}
+
 html, body {
   height: 100%;
 }
 body {
-  color: #fff;
+  color: var(--main-text-color);
   background: linear-gradient(-45deg, #ee5252, #6652ee);
-  background-size: 200% 200%;
 }
 
 a {
-  color: #41f468;
+  color: var(--main-anchor-color);
 }
 
 .dep_desc {
-  color: #41f468;
+  color: var(--main-anchor-color);
 }
 
 #transit-info-header {
-  border-bottom: thin solid #41f468;
+  border-bottom: thin solid var(--main-border-color);
 }
 #office-info-header {
-  border-bottom: thin solid #41f468;
+  border-bottom: thin solid var(--main-border-color);
 }
 #weather-info-header {
-  border-bottom: thin solid #41f468;
+  border-bottom: thin solid var(--main-border-color);
 }
 
 .blur:before, .blur::before,
@@ -35,27 +43,27 @@ a {
   background: white;
 }
 .slide-bar::-webkit-slider-thumb {
-  background: #41f468;
+  background: var(--main-border-color);
 }
 
 .slide-bar::-moz-range-thumb {
-  background: #41f468;
+  background: var(--main-border-color);
 }
 
 .on {
-  color: #41f468;
+  color: var(--main-anchor-color);
 }
 .off {
-  color: white;
+  color: var(--main-consume-off);
 }
 }
 .transit-item-wrapper {
-  border-color: #41f468;
+  border-color: var(--main-border-color);
 }
 #search-form input[type=search] {
   color: white;
   background: none;
-  border-bottom: thin solid #41f468;
+  border-bottom: thin solid var(--main-border-color);
 }
 
 
@@ -70,8 +78,8 @@ a {
 }
 #time-bar-background {
   opacity: 1;
-  background: #aaaaaa;
+  background: var(--main-timebar-background);
 }
 #time-bar {
-  background: #ffffff;
+  background: var(--main-timebar);
 }
