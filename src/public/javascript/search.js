@@ -59,11 +59,18 @@ function playTrack(elem, next) {
 
 	var _uri = document.getElementById(uriId).innerHTML;
 
-	window.music.mopidy.tracklist.add(null, 1, _uri);
-	if (!next) {
-		window.music.mopidy.playback.next();
-		window.music.mopidy.play();
-	}
+	window.music.mopidy.tracklist.getLength().then((len) => {
+		var pos = 1;
+		if (len < 1) {
+			pos = 0;
+		}
+		window.music.mopidy.tracklist.add(null, pos, _uri);
+		if (!next) {
+			console.log(window.music.mopidy);
+			if (pos == 1) window.music.mopidy.playback.next();
+			window.music.mopidy.playback.play();
+		}
+	});
 }
 /**
  * Add the searched for track to the spotify track queue (at the end)
