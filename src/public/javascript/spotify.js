@@ -19,7 +19,6 @@ xmlH.onreadystatechange = function() {
     intervalfn = setInterval(function() {
       if (!paused) {
         currentTime++;
-        console.log(currentTime > totalTime);
         updateTimeBar();
       }
     }, 1000);
@@ -249,6 +248,7 @@ function updateCoverArt(trackUri, imgs) {
 }
 
 function updateTimeBar() {
+  if (currentTime > totalTime) return;
   var displayCurrentTime = '';
   var _copy = currentTime;
   var _minutes = parseInt(_copy / 60);
