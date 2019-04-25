@@ -1,3 +1,15 @@
+/**
+ * @author Nathan
+ *
+ * File used for modulating the search logic for searching spotify for the query.
+ */
+
+/**
+ * Function to seach spotify for the given query.  The query comes from what the user enters
+ * into the search bar on the dynamic page.
+ *
+ * @param {Event} e is the event passed in through the search being submitted
+ */
 function searchSpotify(e) {
 	e.preventDefault();
 	var container = document.getElementById('search-results-list');
@@ -34,6 +46,13 @@ function searchSpotify(e) {
 	});
 }
 
+/**
+ * Function to play the track a user selects from the search menu.
+ * Can either play right now or play next.
+ *
+ * @param {DOMNode} elem is the search item html wrapper clicked on
+ * @param {boolean} next if true then play song next, if false then immediately play the song
+ */
 function playTrack(elem, next) {
 	var id = elem.id;
 	var uriId = next ? id.replace('playnext','uri') : id.replace('play','uri');
@@ -46,6 +65,9 @@ function playTrack(elem, next) {
 		window.music.mopidy.play();
 	}
 }
+/**
+ * Add the searched for track to the spotify track queue (at the end)
+ */
 function addTrackToQueue(elem) {
 	var id = elem.id;
 	var uriId = id.replace('addqueue','uri');
@@ -55,7 +77,11 @@ function addTrackToQueue(elem) {
 		window.music.mopidy.tracklist.add(null, len, _uri);
 	});
 }
+/**
+ * Copy the searched for track URI to the clipboard
+ */
 function copyTrackURI(elem) {
+	// the input item is hidden off the screen, so we can use it for clipboard copying.
 	var id = elem.id;
 	var uriId = id.replace('copyuri','uri');
 

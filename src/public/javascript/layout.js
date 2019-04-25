@@ -1,3 +1,8 @@
+/**
+ * change the theme for the page to the one clicked on
+ * 
+ * @param {string} theme is the theme we are switching to
+ */
 function changeTheme(theme) {
 	document.body.style.background = '';
 	var link = document.getElementById('theme');

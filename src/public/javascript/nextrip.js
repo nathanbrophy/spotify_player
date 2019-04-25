@@ -1,4 +1,10 @@
 /**
+ * @author Nathan
+ * 
+ * File is responsible for modulating the nextrip display functions.
+ */
+
+/**
  * Set up an interval that refreshes the marquee content for
  * transit info, every minute.
  */
@@ -21,7 +27,6 @@ function displayAllTimes() {
  * @param {DOM element} marquee is the currently active marquee
  */
 function refreshTransitTimes(stopID, marquee) {
-  console.log("Stop ID: ", stopID);
   var http = new XMLHttpRequest();
 
   http.onreadystatechange = () => {

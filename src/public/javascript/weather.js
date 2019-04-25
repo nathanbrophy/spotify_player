@@ -1,3 +1,9 @@
+/**
+ * @author Nathan
+ * 
+ * File to modulate the weather logic.
+ */
+
 var currSlide = 1;  // Control variable for current position in the slideshow
 
 /**
