@@ -123,16 +123,45 @@ function changeBgGradient(elem) {
 	var g2 = clamp(averageColors[1]);
 	var b2 = clamp(averageColors[2] + 78);
 
-	var white1 = ((r1 + g1 + b1) / 3) > 170;
-	var white2 = ((r2 + g2 + b2) / 3) > 170;
+	/*
+	 * Logic for determining the brightness of the background adapted and
+	 * extended from:
+	 * https://stackoverflow.com/questions/11867545/change-text-color-based-on-brightness-of-the-covered-background-area
+	 */
+	var brightness1 = Math.round(((r1 * 299) +
+                      (g1 * 587) +
+                      (b1 * 114)) / 1000);
+	var brightness2 = Math.round(((r2 * 299) +
+                      (g2 * 587) +
+                      (b2 * 114)) / 1000);
+	/*
+	 * End logic taken from https://stackoverflow.com/questions/11867545/change-text-color-based-on-brightness-of-the-covered-background-area
+	 */
+	var bAvg = (brightness1 + brightness2) / 2;
 	// Sometimes the background can get too light, so we change the text colors to be more visible
-	if (white1 || white2) {
+	if (bAvg > 125) {
 		document.body.style.setProperty('--main-text-color', 'black');
 		document.body.style.setProperty('--main-border-color', '#324fb7');
 		document.body.style.setProperty('--main-anchor-color', '#324fb7');
 		document.body.style.setProperty('--main-timebar-background', '#cdcdcd');
 		document.body.style.setProperty('--main-timebar', '#3be24b');
 		document.body.style.setProperty('--main-consume-off', 'black');
+	}
+	else {
+		document.body.style.setProperty('--main-text-color', 'white');
+		document.body.style.setProperty('--main-border-color', '#41f468');
+		document.body.style.setProperty('--main-anchor-color', '#41f468');
+		document.body.style.setProperty('--main-timebar-background', '#aaaaaa');
+		document.body.style.setProperty('--main-timebar', '#ffffff');
+		document.body.style.setProperty('--main-consume-off', 'white');
+	}
+	if (g1 > (r1 + b1) || g2 > (r2 + b2)) {
+		document.body.style.setProperty('--main-border-color', '#324fb7');
+		document.body.style.setProperty('--main-anchor-color', '#324fb7');
+	}
+	else {
+		document.body.style.setProperty('--main-border-color', '#41f468');
+		document.body.style.setProperty('--main-anchor-color', '#41f468');
 	}
 	var rgb1 = `rgb(${r1}, ${g1}, ${b1})`;
 	var rgb2 = `rgb(${r2}, ${g2}, ${b2})`;
@@ -202,7 +231,7 @@ function toggleContent(elem) {
 	switch (elem.id) {
 		case 'o-info':
 			if (elem.checked) {
-				document.getElementById('office-info-section').style.display = 'grid';
+				document.getElementById('office-info-section').style.display = 'block';
 			}
 			else {
 				document.getElementById('office-info-section').style.display = 'none';
@@ -210,7 +239,7 @@ function toggleContent(elem) {
 			break;
 		case 'w-info':
 			if (elem.checked) {
-				document.getElementById('weather-info-section').style.display = 'grid';
+				document.getElementById('weather-info-section').style.display = 'block';
 			}
 			else {
 				document.getElementById('weather-info-section').style.display = 'none';
@@ -218,7 +247,7 @@ function toggleContent(elem) {
 			break;
 		default:
 			if (elem.checked) {
-				document.getElementById('transit-info-section').style.display = 'grid';
+				document.getElementById('transit-info-section').style.display = 'block';
 			}
 			else {
 				document.getElementById('transit-info-section').style.display = 'none';
