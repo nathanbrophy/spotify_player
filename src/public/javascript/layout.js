@@ -13,30 +13,42 @@ function changeTheme(theme) {
 	var _itheme = document.getElementById('light-theme');
 	var _dtheme = document.getElementById('dark-theme');
 	var _dytheme = document.getElementById('dynamic-theme');
+	var _mtheme = document.getElementById('mav-theme');
 	switch (theme) {
 		case 'colorful':
 			_ctheme.classList.add('current-theme');
 			_itheme.classList.remove('current-theme');
 			_dtheme.classList.remove('current-theme');
 			_dytheme.classList.remove('current-theme');
+			_mtheme.classList.remove('current-theme');
 			break;
 		case 'dark':
 			_dtheme.classList.add('current-theme');
 			_itheme.classList.remove('current-theme');
 			_ctheme.classList.remove('current-theme'); 
 			_dytheme.classList.remove('current-theme');
+			_mtheme.classList.remove('current-theme');
 			break;
 		case 'dynamic':
 			_dytheme.classList.add('current-theme');
 			_itheme.classList.remove('current-theme');
 			_dtheme.classList.remove('current-theme');
 			_ctheme.classList.remove('current-theme');
+			_mtheme.classList.remove('current-theme');
 			changeBgGradient(document.getElementById('current-track-image'));
+			break;
+		case 'mav':
+			_mtheme.classList.add('current-theme');
+			_itheme.classList.remove('current-theme');
+			_ctheme.classList.remove('current-theme'); 
+			_dytheme.classList.remove('current-theme');
+			_dtheme.classList.remove('current-theme');
 			break;
 		default:
 			_itheme.classList.add('current-theme');
 			_ctheme.classList.remove('current-theme');
 			_dtheme.classList.remove('current-theme');
 			_dytheme.classList.remove('current-theme');
+			_mtheme.classList.remove('current-theme');
 	}
 }

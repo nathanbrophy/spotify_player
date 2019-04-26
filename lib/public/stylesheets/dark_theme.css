@@ -44,7 +44,7 @@ header {
   background-color: #323440;
 }
 .on {
-  color: green;
+  color: #00B7FF;
 }
 .off {
   color: #b1b1b1;
@@ -54,9 +54,16 @@ header {
   background: #d3d3d3;
 }
 .slide-bar::-webkit-slider-thumb {
-  background: #4CAF50;
+  background: #00B7FF;
 }
 
 .slide-bar::-moz-range-thumb {
-  background: #4CAF50;
+  background: #00B7FF;
+}
+#time-bar-background {
+  opacity: 1;
+  background: #aaaaaa;
+}
+#time-bar {
+  background: #00B7FF;
 }
