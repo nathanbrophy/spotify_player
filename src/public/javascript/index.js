@@ -178,7 +178,7 @@ function enableClippy() {
 		agent.moveTo(pos.left - 25, pos.top - 25);
 		agent.gestureAt(pos.left, pos.top);
 		agent.speak('Checkout this song playing!');
-		agent.moveTo(50, 50);
+		agent.moveTo(150, 0);
 		if (window.clippyActive) {
 			agent.speak("You can't disable clippy by clicking the paper clip again.....");
 			agent.speak("Do you want me to go away?  Why would you click it again?");
@@ -189,10 +189,15 @@ function enableClippy() {
 		}
 		window.clippyActive = true;
 
-		var intTime = Math.floor(Math.random() * 11);
-		setInterval(function() {
-			zigZag(agent);
-		}, intTime * 3000);
+		agent.gestureAt(0,0);
+		agent.speak('Clicking these will show / hide the different content areas');
+
+		var themes = $('#light-theme').position();
+		agent.moveTo(themes.left - 150, themes.top - 50);
+		agent.gestureAt(themes.left, themes.top);
+		agent.speak('Clicking these will change the theme for the mavboard!');
+
+		agent.moveTo(50,50);
 	});
 }
 
@@ -213,7 +218,7 @@ function zigZag(agent) {
 	agent.moveTo($(window).width() - 75, 50);
 	agent.moveTo(50, $(window).height() - 75);
 
-	agent.moveTo(50, 50);
+	agent.moveTo(150, 0);
 	agent.play('Alert');
 	agent.speak('WOOOO that was fun!!!');
 }
