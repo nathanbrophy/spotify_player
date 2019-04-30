@@ -33,9 +33,11 @@
       <a onclick="toggleSearch()" id="toggle-search-link">Search</a>
     </div>
     <div id="spotify-info-container" class="active">
-      <img id='bg-current-track-image' crossorigin="anonymous">
-      <img id='current-track-image' alt='spotify album art' crossorigin="anonymous" onchange='changeBgGradient(this)' onload="changeBgGradient(this)">
-
+      <div class="relative-container">
+        <img id='prev-track-image-2' crossorigin="anonymous">
+        <img id='prev-track-image-1' crossorigin="anonymous">
+        <img id='current-track-image' alt='spotify album art' crossorigin="anonymous" onchange='changeBgGradient(this)' onload="changeBgGradient(this)">
+      </div>
       <p id='currSong'>No Song Currently Playing</p>
     </div>
     

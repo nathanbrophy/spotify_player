@@ -239,19 +239,33 @@ class SpotifyController {
 // make controller available globally as window.music
 window.music = new SpotifyController();
 
+var prevTrackImages = [];
+const MAX_PREV_IMAGES = 2;
 function updateCoverArt(trackUri, imgs) {
 	const [image] = imgs[trackUri];
 	var elem = document.getElementById('current-track-image');
-  if (elem.src) {
-    var jqAnimator = $('#bg-current-track-image');
-    var animator = jqAnimator[0];
-    animator.src = elem.src;
-    animator.setAttribute("height", elem.height + 'px');
-    animator.setAttribute("width", elem.width + 'px');
-    animator.setAttribute("opacity", '1');
-    jqAnimator.animate({
-      opacity: '0.0'
-    }, 'slow');
+  if (elem.src && elem.src != image.uri) {
+    if (prevTrackImages.length == MAX_PREV_IMAGES) {
+      prevTrackImages.splice(0,1);
+    }
+    prevTrackImages.push({
+      src: elem.src,
+      height: elem.height,
+      width: elem.width
+    });
+  }
+  for (var i = 0; i < prevTrackImages.length; i++) {
+    var t = document.getElementById('prev-track-image-' + (i+1));
+    t.setAttribute("src", prevTrackImages[i].src);
+    var scale = (100 - ((i+1) * 10)) / 100;
+    var height = prevTrackImages[i].height * scale;
+    var width = prevTrackImages[i].width * scale;
+    var left = i == 0 ? -31 : -35;
+    var top = (elem.height - height) / 2;
+    top = top + "px ";
+    t.setAttribute("height", height + 'px');
+    t.setAttribute("width", width + 'px');
+    t.style.margin = top + "0 " + top + left + "%";
   }
 	elem.setAttribute("src", image.uri);
 	elem.setAttribute("height", image.height + 'px');
