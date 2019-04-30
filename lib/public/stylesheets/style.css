@@ -412,6 +412,15 @@ input[type=radio] {
   background: #3be24b;
   border-radius: 50px;
 }
+#theme-div-toggle {
+  cursor: pointer;
+}
+
+#bg-current-track-image {
+  position: absolute;
+  margin: 10px auto;
+}
+
 /************************************************************************************
 MEDIA QUERIES
 *************************************************************************************/

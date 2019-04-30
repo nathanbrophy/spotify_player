@@ -14,13 +14,15 @@
       <label for="t-info">Transit info</label>
     </div>
     <h1>{{title}}</h1>
-      <div id='theme-picker'>
+      <a class="active" title="Click to show list of Active theme choices" onclick="toggleThemePicker(true)" id='theme-div-toggle'>Themes</a>
+      <div id='theme-picker' class="hidden">
         <a title='classic light theme' onclick="changeTheme('default')" id='light-theme'><b>Light</b></a>
         <a title='classic dark theme' onclick="changeTheme('dark')" id='dark-theme'><b>Dark</b></a>
         <a title='classic maverick blue theme' onclick="changeTheme('mav')" id='mav-theme'><b>Mav</b></a>
         <a title='colorful moving gradient background' onclick="changeTheme('colorful')" id='colorful-theme'><b>Colorful</b></a>
         <a title='linear gradient chosen from album art colors' onclick="changeTheme('dynamic')" id='dynamic-theme' class="current-theme"><b>Dynamic</b></a>
         <a class="fas fa-paperclip" title='enable clippy' id='enable-clippy' onclick="enableClippy()"></a>
+        <a class="fas fa-times" title="Hide themes" onclick="toggleThemePicker(false)"></a>
       </div>
     <hr>
   </section>
@@ -31,6 +33,7 @@
       <a onclick="toggleSearch()" id="toggle-search-link">Search</a>
     </div>
     <div id="spotify-info-container" class="active">
+      <img id='bg-current-track-image' crossorigin="anonymous">
       <img id='current-track-image' alt='spotify album art' crossorigin="anonymous" onchange='changeBgGradient(this)' onload="changeBgGradient(this)">
 
       <p id='currSong'>No Song Currently Playing</p>
