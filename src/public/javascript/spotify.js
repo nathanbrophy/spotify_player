@@ -238,6 +238,7 @@ class SpotifyController {
 
 // make controller available globally as window.music
 window.music = new SpotifyController();
+console.log(window.music);
 
 var prevTrackImages = [];
 const MAX_PREV_IMAGES = 2;
@@ -246,9 +247,9 @@ function updateCoverArt(trackUri, imgs) {
 	var elem = document.getElementById('current-track-image');
   if (elem.src && elem.src != image.uri) {
     if (prevTrackImages.length == MAX_PREV_IMAGES) {
-      prevTrackImages.splice(0,1);
+      prevTrackImages.pop();
     }
-    prevTrackImages.push({
+    prevTrackImages.unshift({
       src: elem.src,
       height: elem.height,
       width: elem.width

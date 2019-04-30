@@ -12,6 +12,51 @@ function displayDynamicContent() {
 	window.playlist = false;
 	displayAllTimes();
 	displayWeather();
+	var originalHeight, originalwidth;
+	$('#prev-track-image-1').hover(function() {
+		var elem = $(this)[0];
+		originalHeight = elem.getAttribute('height');
+		originalwidth = elem.getAttribute('width');
+		$(this).css({
+			'z-index': '999',
+			'opacity': '1'
+		});
+		$(this).animate({
+			'height': '+=100px',
+			'width': '+=100px'
+		}, 'slow');
+	}, function() {
+		$(this).css({
+			'z-index': '2',
+			'opacity': '.9'
+		});
+		$(this).animate({
+			'height': originalHeight,
+			'width': originalwidth
+		}, 'slow');
+	});
+	$('#prev-track-image-2').hover(function() {
+		var elem = $(this)[0];
+		originalHeight = elem.getAttribute('height');
+		originalwidth = elem.getAttribute('width');
+		$(this).css({
+			'z-index': '999',
+			'opacity': '1'
+		});
+		$(this).animate({
+			'height': '+=150px',
+			'width': '+=150px'
+		}, 'slow');
+	}, function() {
+		$(this).css({
+			'z-index': '1',
+			'opacity': '.65'
+		});
+		$(this).animate({
+			'height': originalHeight,
+			'width': originalwidth 
+		}, 'slow');
+	});
 
 	containers = [
 					{
