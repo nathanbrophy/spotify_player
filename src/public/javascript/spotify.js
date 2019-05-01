@@ -227,16 +227,43 @@ class SpotifyController {
 
 // make controller available globally as window.music
 window.music = new SpotifyController();
+console.log(window.music);
 
+var prevTrackImages = [];
+const MAX_PREV_IMAGES = 2;
 function updateCoverArt(trackUri, imgs) {
 	const [image] = imgs[trackUri];
 	var elem = document.getElementById('current-track-image');
+  if (elem.src && elem.src != image.uri) {
+    if (prevTrackImages.length == MAX_PREV_IMAGES) {
+      prevTrackImages.pop();
+    }
+    prevTrackImages.unshift({
+      src: elem.src,
+      height: elem.height,
+      width: elem.width
+    });
+  }
+  for (var i = 0; i < prevTrackImages.length; i++) {
+    var t = document.getElementById('prev-track-image-' + (i+1));
+    t.setAttribute("src", prevTrackImages[i].src);
+    var scale = (100 - ((i+1) * 10)) / 100;
+    var height = prevTrackImages[i].height * scale;
+    var width = prevTrackImages[i].width * scale;
+    var left = i == 0 ? -31 : -35;
+    var top = (elem.height - height) / 2;
+    top = top + "px ";
+    t.setAttribute("height", height + 'px');
+    t.setAttribute("width", width + 'px');
+    t.style.margin = top + "0 " + top + left + "%";
+  }
 	elem.setAttribute("src", image.uri);
 	elem.setAttribute("height", image.height + 'px');
 	elem.setAttribute("width", image.width + 'px');
 }
 
 function updateTimeBar() {
+  if (currentTime > totalTime) return;
   var displayCurrentTime = '';
   var _copy = currentTime;
   var _minutes = parseInt(_copy / 60);

@@ -1,21 +1,21 @@
 @charset "UTF-8";
 body {
   background-color: white;
-  color: black;
+  color: #753033;
 }
 h3 {
-  color: black;
+  color: #753033;
 }
 header {
-  color: black;
+  color: #753033;
 }
 /* Fading animation */
 #office-info-header, #weather-info-header {
-  color: black;
+  color: #753033;
   border-bottom: thin solid #5c90a0;
 }
 #transit-info-header {
-  color: black;
+  color: #753033;
   border-bottom: thin solid #5c90a0;
 }
 /** marquee CSS found at: https://codepen.io/strongpom/pen/qmooZe */
@@ -26,31 +26,38 @@ header {
 
 #search-form input[type=search]{
   background-color: white;
-  color: black;
+  color: #753033;
   border: none;
   border-bottom: thin solid #5c90a0;
 }
 #search-form input[type=search]:after{
   background-color: white;
-  color: black;
+  color: #753033;
 }
 .interactive-track-item:nth-child(even) {
   background-color: #dddddd;
 }
 .on {
-  color: green;
+  color: #337ab7;
 }
 .off {
-  color: black;
+  color: #753033;
 }
 .slide-bar {
   border-radius: 5px;
 }
 .slide-bar::-webkit-slider-thumb {
   border-radius: 50%;
-  background: black;
+  background: #337ab7;
 }
 
 .slide-bar::-moz-range-thumb {
-  background: black;
+  background: #337ab7;
+}
+#time-bar-background {
+  opacity: 1;
+  background: #aaaaaa;
+}
+#time-bar {
+  background: #337ab7;
 }

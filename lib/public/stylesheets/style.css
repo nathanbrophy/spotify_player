@@ -28,6 +28,11 @@ a {
 header {
 	text-align: center;
 }
+#toggle-content-areas {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
 
 #theme-picker {
   margin: auto;
@@ -186,9 +191,12 @@ input[type=radio] {
   font-size: 1.2em;
 }
 #current-track-image {
-  margin: 10px auto;
+  position: absolute;
   max-height: 500px;
   max-width: 500px;
+  left: 50%;
+  margin-left: -250px;
+  z-index: 3;
 }
 .spotify-header-row {
   display: flex;
@@ -406,6 +414,31 @@ input[type=radio] {
   height: 4px;
   background: #3be24b;
   border-radius: 50px;
+}
+#theme-div-toggle {
+  cursor: pointer;
+}
+
+#bg-current-track-image {
+  position: absolute;
+  margin: 10px auto;
+}
+.relative-container {
+  position: relative;
+  min-height: 500px;
+  margin: 20px auto;
+}
+#prev-track-image-1 {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  opacity: .9;
+}
+#prev-track-image-2 {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  opacity: .65;
 }
 /************************************************************************************
 MEDIA QUERIES

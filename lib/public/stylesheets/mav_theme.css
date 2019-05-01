@@ -2,8 +2,8 @@
 
 :root {
   --main-text-color: white;
-  --main-border-color: #41f468;
-  --main-anchor-color: #41f468;
+  --main-border-color: #fdcc31;
+  --main-anchor-color: #fdcc31;
   --main-timebar-background: #aaaaaa;
   --main-timebar: #ffffff;
   --main-consume-off: white;
@@ -13,26 +13,26 @@ html, body {
   height: 100%;
 }
 body {
-  color: var(--main-text-color);
-  background: linear-gradient(-45deg, rgb(68, 0, 0), rgb(0, 0, 78));
+  color: white;
+  background: #0069aa;
 }
 
 a {
-  color: var(--main-anchor-color);
+  color: #fdcc31;
 }
 
 .dep_desc {
-  color: var(--main-anchor-color);
+  color: #fdcc31;
 }
 
 #transit-info-header {
-  border-bottom: thin solid var(--main-border-color);
+  border-bottom: thin solid #fdcc31;
 }
 #office-info-header {
-  border-bottom: thin solid var(--main-border-color);
+  border-bottom: thin solid #fdcc31;
 }
 #weather-info-header {
-  border-bottom: thin solid var(--main-border-color);
+  border-bottom: thin solid #fdcc31;
 }
 
 .blur:before, .blur::before,
@@ -43,27 +43,27 @@ a {
   background: white;
 }
 .slide-bar::-webkit-slider-thumb {
-  background: var(--main-border-color);
+  background: #fdcc31;
 }
 
 .slide-bar::-moz-range-thumb {
-  background: var(--main-border-color);
+  background: #fdcc31;
 }
 
 .on {
-  color: var(--main-anchor-color);
+  color: #fdcc31;
 }
 .off {
-  color: var(--main-consume-off);
+  color: white;
 }
 }
 .transit-item-wrapper {
-  border-color: var(--main-border-color);
+  border-color: #fdcc31;
 }
 #search-form input[type=search] {
   color: white;
   background: none;
-  border-bottom: thin solid var(--main-border-color);
+  border-bottom: thin solid #fdcc31;
 }
 
 
@@ -78,8 +78,8 @@ a {
 }
 #time-bar-background {
   opacity: 1;
-  background: var(--main-timebar-background);
+  background: #aaaaaa;
 }
 #time-bar {
-  background: var(--main-timebar);
+  background: #ffffff;
 }

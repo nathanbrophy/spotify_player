@@ -1,38 +1,15 @@
-/** marquee CSS found at: https://codepen.io/strongpom/pen/qmooZe */
-
 /**
- * Function to go through an return the DOM element
- *
- * @param {string} id is the id of the DOM element you want
- * @returns {DOM element} the DOM element with the given id
+ * @author Nathan
+ * 
+ * File is responsible for modulating the nextrip display functions.
  */
-var $ = (id) => {
-  var ele = null;
-  try {ele = document.getElementById(id);}
-  catch (err) {console.log(err);}
-  return ele;
-};
-
-/**
- * Function to go through an return a list of
- * DOM elements with the class name
- *
- * @param {string} clas is the class of the DOM elements you want
- * @returns {Array [Dom element]} a list of DOM elements with class name = clas
- */
-var $$ = (clas) => {
-  var ele = null;
-  try {ele = document.getElementsByClassName(clas);}
-  catch (err) {console.log(err);}
-  return ele;
-};
 
 /**
  * Set up an interval that refreshes the marquee content for
  * transit info, every minute.
  */
 function displayAllTimes() {
-  var marquee = $('transit-marquee');
+  var marquee = document.getElementById('transit-marquee');
   var stopIDs = [16325, 56001, 56043];
 
   stopIDs.forEach ((stopID) => {
@@ -50,7 +27,6 @@ function displayAllTimes() {
  * @param {DOM element} marquee is the currently active marquee
  */
 function refreshTransitTimes(stopID, marquee) {
-  console.log("Stop ID: ", stopID);
   var http = new XMLHttpRequest();
 
   http.onreadystatechange = () => {
