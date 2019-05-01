@@ -29,7 +29,7 @@ mopidy.on('event:trackPlaybackPaused', () => {
 
 // render home page
 router.get('/', (req, res, next) => {
-  res.render('index', {title: 'Mavboard'});
+  res.render('index', {title: 'Music Player'});
 });
 router.get('/currentTime', (req, res, next) => {
 	var data = JSON.stringify({

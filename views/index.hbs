@@ -3,23 +3,11 @@
 <section class="grid-container">
   <script type="text/javascript" src="/javascript/index.js"></script>
   <section class='grid-item section1'>
-    <div id="toggle-content-areas">
-      <input type="checkbox" name="o-info" id='o-info' onchange="toggleContent(this)" checked>
-      <label for="o-info">office info</label>
-
-      <input type="checkbox" name="w-info" id='w-info' onchange="toggleContent(this)" checked>
-      <label for="w-info">Weather info</label>
-
-      <input type="checkbox" name="t-info" id='t-info' onchange="toggleContent(this)" checked>
-      <label for="t-info">Transit info</label>
-    </div>
     <h1>{{title}}</h1>
       <a class="active" title="Click to show list of Active theme choices" onclick="toggleThemePicker(true)" id='theme-div-toggle'><b>Themes</b></a>
       <div id='theme-picker' class="hidden">
         <a title='classic light theme' onclick="changeTheme('default')" id='light-theme'><b>Light</b></a>
         <a title='classic dark theme' onclick="changeTheme('dark')" id='dark-theme'><b>Dark</b></a>
-        <a title='classic maverick blue theme' onclick="changeTheme('mav')" id='mav-theme'><b>Mav</b></a>
-        <a title='Hot dogs, get your hot dogs heeerrrreeee!' onclick="changeTheme('hotdog')" id='hotdog-theme'><b>Hot Dog</b></a>
         <a title='colorful moving gradient background' onclick="changeTheme('colorful')" id='colorful-theme'><b>Colorful</b></a>
         <a title='linear gradient chosen from album art colors' onclick="changeTheme('dynamic')" id='dynamic-theme' class="current-theme"><b>Dynamic</b></a>
         <a class="fas fa-paperclip" title='enable clippy' id='enable-clippy' onclick="enableClippy()"></a>
@@ -56,22 +44,6 @@
     </div>
   </section>
 
-  <section class='grid-item section3 info-fields' id='office-info-section'>
-    <h3 id="office-info-header">Office Info</h3>
-
-    <div class="message">
-      <p>Office Phone: 651-294-1111</p>
-      <p>4HELP: 651-848-4700</p>
-      <p>Wifi Password: T1mmyT@mz</p>
-      <p>Jason: 612-968-8107</p>
-    </div>
-  </section>
-
-  <section class='grid-item section4 info-fields' id='weather-info-section'>
-    <h3 id="weather-info-header">Weather Info</h3>
-    <div id="weather-wrapper"></div>
-  </section>
-
   <section class='grid-item section8 spot-buttons'>
     <div id="spot-button-wrapper">
         <i class="fas fa-backward cursor-hover" onclick="window.music.sptPreviousTrack()" id='sptPrvBtn'></i>
@@ -95,14 +67,6 @@
         <input type="range" name="volume" min="1" max="100" value="25" class="slide-bar" id="music-volume-control" onchange="volumeChanged(this)">
         <i class="fas fa-volume-up"></i>
       </div>
-    </div>
-  </section>
-  <section class="grid-item section10 transit_section" id="transit-info-section">
-    <h3 id="transit-info-header">Transit Info</h3>
-    <div class="container blur">
-      <ul class="slider" id="transit-marquee">
-        <!-- dynamic transit times generated here -->
-      </ul>
     </div>
   </section>
 </section>

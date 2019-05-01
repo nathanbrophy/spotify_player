@@ -10,8 +10,6 @@ var containers;  // Makes switching between dynamic content pages easier
  */
 function displayDynamicContent() {
 	window.playlist = false;
-	displayAllTimes();
-	displayWeather();
 	var originalHeight, originalwidth;
 	$('#prev-track-image-1').hover(function() {
 		var elem = $(this)[0];
@@ -266,38 +264,6 @@ function zigZag(agent) {
 	agent.moveTo(150, 0);
 	agent.play('Alert');
 	agent.speak('WOOOO that was fun!!!');
-}
-
-/**
- * Function to toggle the content selected on or off in the client view
- */
-function toggleContent(elem) {
-	switch (elem.id) {
-		case 'o-info':
-			if (elem.checked) {
-				$("#office-info-section").fadeIn('slow');
-			}
-			else {
-				$("#office-info-section").fadeOut('slow');
-			}
-			break;
-		case 'w-info':
-			if (elem.checked) {
-				$("#weather-info-section").fadeIn('slow');
-			}
-			else {
-				$("#weather-info-section").fadeOut('slow');
-			}
-			break;
-		default:
-			if (elem.checked) {
-				$("#transit-info-section").fadeIn('slow');
-			}
-			else {
-				$("#transit-info-section").fadeOut('slow');
-			}
-			break;
-	}
 }
 
 /**
