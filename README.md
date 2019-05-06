@@ -1,17 +1,17 @@
-# mavboard
+# Spotify Player
 
 ## Installation
 
 1. Clone project from GitHub 
 
 ```sh
-git clone git@github.com:mavericksoftwareconsulting/mavboard.git
+git clone git@github.com:nathanbrophy/spotify_player.git
 ```
 
 2. Enter the new mavboard directory
 
 ```sh
-cd mavboard/
+cd spotify_player/
 ```
 
 3. Install all dependencies
@@ -21,38 +21,20 @@ npm install
 ```
 
 
-## Running mavboard
+## Running spotify_player
 
 ```sh
 npm start
 ```
 
-Mavboard will run on http://localhost:3000
+Spotify Player will run on http://localhost:3000
 
 ## Developing code
 
 ### Compiling
 
-Core Javascript logic lives in the `src/` directory, and this is where you should write all Javascript. However, to actually run the code, you need to compile it using [Babel](https://babeljs.io). The easiest way to do this is with the built-in script:
+Core Javascript files live in the src/public/javascript directory.  To compile changes: `% npm start` will run the grunt script to compile and launch the server.   
 
-```sh
-npm run compile
-```
+### Continuing Development
 
-### Using Flow
-
-Mavboard code is capable of running [Flow](https://flow.org), a static type-checker which makes Javascript strongly-typed. Flow will only run on pages which begin with the opt-in comment:
-
-```js
-// @flow
-```
-
-Once it's enabled, use the built-in script to check all Flow-enabled code:
-
-```sh
-npm run flow
-```
-
-This script will report any type errors and warnings for you to fix. 
-
-*_remember to compile with `npm run compile` in order to see your changes when mavboard is running_*
+This project was forked from a student lead project from Maverick Software Consulting, that I was able to head for a little less than a year.  A lot of great progress was made on it, and this is a lite version of it that continues off of the music player functionality.
