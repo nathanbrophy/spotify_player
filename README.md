@@ -21,7 +21,7 @@ npm install
 ```
 
 
-## Running mavboard
+## Running spotify_player
 
 ```sh
 npm start
