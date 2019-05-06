@@ -32,6 +32,8 @@ router.get('/', (req, res, next) => {
   res.render('index', {title: 'Music Player'});
 });
 router.get('/currentTime', (req, res, next) => {
+	// TODO: replace curr with a call to mopidy to get current time placement
+	// And get rid of the interval function
 	var data = JSON.stringify({
 		curr: currentTime,
 		total: totalTime

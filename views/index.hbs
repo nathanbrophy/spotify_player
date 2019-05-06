@@ -10,7 +10,6 @@
         <a title='classic dark theme' onclick="changeTheme('dark')" id='dark-theme'><b>Dark</b></a>
         <a title='colorful moving gradient background' onclick="changeTheme('colorful')" id='colorful-theme'><b>Colorful</b></a>
         <a title='linear gradient chosen from album art colors' onclick="changeTheme('dynamic')" id='dynamic-theme' class="current-theme"><b>Dynamic</b></a>
-        <a class="fas fa-paperclip" title='enable clippy' id='enable-clippy' onclick="enableClippy()"></a>
         <a class="fas fa-times" title="Hide themes" onclick="toggleThemePicker(false)"></a>
       </div>
     <hr>
@@ -25,7 +24,7 @@
       <div class="relative-container">
         <img id='prev-track-image-2' crossorigin="anonymous">
         <img id='prev-track-image-1' crossorigin="anonymous">
-        <img id='current-track-image' alt='spotify album art' crossorigin="anonymous" onchange='changeBgGradient(this)' onload="changeBgGradient(this)">
+        <img id='current-track-image' src="/imgs/fractal_tree.png" alt='spotify album art' crossorigin="anonymous" onchange='changeBgGradient(this)' onload="changeBgGradient(this)">
       </div>
       <p id='currSong'>No Song Currently Playing</p>
     </div>
@@ -44,7 +43,7 @@
     </div>
   </section>
 
-  <section class='grid-item section8 spot-buttons'>
+  <section class='grid-item section3 spot-buttons'>
     <div id="spot-button-wrapper">
         <i class="fas fa-backward cursor-hover" onclick="window.music.sptPreviousTrack()" id='sptPrvBtn'></i>
         <i class="fas fa-play cursor-hover" onclick="window.music.sptPlay()" id='sptPlayBtn'></i>

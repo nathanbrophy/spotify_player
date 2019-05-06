@@ -205,66 +205,6 @@ function changeBgGradient(elem) {
 	// document.body.style.backgroundSize = '200% 200%';
 	return true;
 }
-/**
- * When someone clicks the paper clip, we enable clippy, and in
- * true clippy spirit, clippy is really annoying.
- */
-function enableClippy() {
-	clippy.load('Clippy', function(agent) {
-		agent.show();
-		agent.moveTo($(window).width() / 2, $(window).height() / 2);
-		agent.play('GetArtsy');
-		agent.speak('Clippy Enabled Clippy Enabled Clippy Enabled, repeat repeat, Clippy Enabled Clippy Enabled Clippy Enabled');
-		agent.moveTo(50, 50);
-		agent.moveTo($(window).width() - 75, $(window).height() - 75);
-		var pos = $('#current-track-image').position();
-		agent.moveTo(pos.left - 25, pos.top - 25);
-		agent.gestureAt(pos.left, pos.top);
-		agent.speak('Checkout this song playing!');
-		agent.moveTo(150, 0);
-		if (window.clippyActive) {
-			agent.speak("You can't disable clippy by clicking the paper clip again.....");
-			agent.speak("Do you want me to go away?  Why would you click it again?");
-			agent.speak("Now I'm sad >:(");
-			agent.speak("Oh well, at first there was one clippy, now there are many!!!!");
-			agent.speak("ZigZag Time!");
-			zigZag(agent);
-		}
-		window.clippyActive = true;
-
-		agent.gestureAt(0,0);
-		agent.speak('Clicking these will show / hide the different content areas');
-
-		var themes = $('#light-theme').position();
-		agent.moveTo(themes.left - 150, themes.top - 50);
-		agent.gestureAt(themes.left, themes.top);
-		agent.speak('Clicking these will change the theme for the mavboard!');
-
-		agent.moveTo(50,50);
-	});
-}
-
-function zigZag(agent) {
-	agent.moveTo(50, 50);
-	agent.moveTo($(window).width() - 75, $(window).height() - 75);
-	agent.moveTo(50, $(window).height() - 75);
-	agent.moveTo($(window).width() - 75, $(window).height() - 75);
-	agent.moveTo(50, $(window).height() - 75);
-	agent.moveTo($(window).width() - 75, 50);
-	agent.moveTo(50, $(window).height() - 75);
-
-	agent.moveTo(50, 50);
-	agent.moveTo($(window).width() - 75, $(window).height() - 75);
-	agent.moveTo(50, $(window).height() - 75);
-	agent.moveTo($(window).width() - 75, $(window).height() - 75);
-	agent.moveTo(50, $(window).height() - 75);
-	agent.moveTo($(window).width() - 75, 50);
-	agent.moveTo(50, $(window).height() - 75);
-
-	agent.moveTo(150, 0);
-	agent.play('Alert');
-	agent.speak('WOOOO that was fun!!!');
-}
 
 /**
  * If Themes link is clicked, then show all the themes, if
