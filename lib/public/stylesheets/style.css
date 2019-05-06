@@ -10,6 +10,7 @@ body {
   font-size: 1.3em;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
+  text-align: center;
 }
 
 svg:not(:root) {
@@ -24,11 +25,17 @@ h1 {
   font-size: 50px;
 }
 
-a {
-}
 
 header {
 	text-align: center;
+}
+.spotify {
+  width: 50%;
+  margin: auto;
+}
+.spot-buttons {
+  width: 60%;
+  margin: auto;
 }
 #theme-picker {
   margin: auto;
@@ -329,4 +336,34 @@ MEDIA QUERIES
 	h1 {
 		font-size: 2em;
 	}
+}
+
+@media (max-width: 850px) {
+  body {
+    font-size: 1em;
+    padding: 2.5%;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  #current-track-image {
+    max-height: 200px;
+    max-width: 200px;
+    margin-left: -100px;
+  }
+  .relative-container {
+    min-height: 200px;
+  }
+  .spotify {
+    width: 100%;
+  }
+  .spot-buttons {
+    width: 100%;
+  }
+  .slide-bar {
+    width: 33% !important;
+  }
+  #time-bar-background {
+    width: 65%;
+  }
 }
