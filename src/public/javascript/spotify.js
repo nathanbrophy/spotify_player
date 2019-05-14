@@ -1,13 +1,6 @@
-// @flow
-
 'use strict';
 
-// we have access to:
-// mopidy.playback
-// mopidy.tracklist
-// mopidy.playlists
-// mopidy.library
-var currentTime, totalTime, paused, intervalfn; // use storage uphere
+var currentTime, totalTime, paused, intervalfn;
 
 var xmlH = new XMLHttpRequest();
 xmlH.onreadystatechange = function() {
@@ -29,13 +22,8 @@ xmlH.send();
 
 class SpotifyController {
   constructor() {
-    // maverick pi
     this.rpcURL = 'http://localhost:6680/mopidy/rpc';
     this.wsURL = 'ws://localhost:6680/mopidy/ws';
-
-    // jade pi
-    // this.rpcURL = 'http://192.168.2.61:6680/mopidy/rpc';
-    // this.wsURL = 'ws://192.168.2.61:6680/mopidy/ws';
 
     // establish Mopidy API connection
     this.initMopidy().then((m) => {
@@ -166,13 +154,11 @@ class SpotifyController {
         break;
       case 'state:offline':
 
-      // TODO default to connecting first, then wait for connection
       case 'reconnectionPending':
       case 'reconnecting':
         window.music.state.online = false;
         break;
 
-      // TODO on song change, emit event so text can be updated
       case 'event:trackPlaybackStarted':
         window.music.mopidy.playback.getCurrentTrack().then((track) => {
           window.music.state.currentTrack = track;
