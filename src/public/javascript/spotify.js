@@ -30,8 +30,8 @@ xmlH.send();
 class SpotifyController {
   constructor() {
     // maverick pi
-    this.rpcURL = 'http://192.168.140.99:6680/mopidy/rpc';
-    this.wsURL = 'ws://192.168.140.99:6680/mopidy/ws';
+    this.rpcURL = 'http://localhost:6680/mopidy/rpc';
+    this.wsURL = 'ws://localhost:6680/mopidy/ws';
 
     // jade pi
     // this.rpcURL = 'http://192.168.2.61:6680/mopidy/rpc';
