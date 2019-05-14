@@ -7,3 +7,21 @@
 </style>
 
 <h1>Oh Dear, it looks like something went wrong.  We're sorry!</h1>
+
+<h2 style="color:red;">{{error}}</h2>
+<p id="count-down">Redirecting to home page in 10 seconds</p>
+
+<script type="text/javascript">
+	var i = 9;
+	var inter = setInterval(function() {
+		var p = document.getElementById('count-down');
+		if (i > 0) {
+			p.innerHTML = "Redirecting to home page in " + i + " seconds"; 
+			i--;
+		}
+		else {
+			p.innerHTML = "<a href='/'>Click here</a> if not automatically redirected.";
+			window.location.href = "/";
+		}
+	}, 1000);
+</script>
