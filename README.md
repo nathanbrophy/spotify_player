@@ -29,11 +29,15 @@ npm start
 
 Spotify Player will run on http://localhost:3000
 
+# Prerequisite Install Steps
+
+* Mopidy is required on the server for connections to spotify, lastFM, and other music streaming services
+
 ## Developing code
 
 ### Compiling
 
-Core Javascript files live in the src/public/javascript directory.  To compile changes: `% npm start` will run the grunt script to compile and launch the server.   
+Core Javascript files live in the src/public/javascript directory.  To compile changes: `% npm start` will run the grunt script to compile and launch the server.  Alternatively `$ grunt` can be ran from the root of the project directory to deploy the changes.
 
 ### Continuing Development
 
